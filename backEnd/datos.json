@@ -1,5 +1,4 @@
-{
-  "personajes": [
+[
     {
       "nombre_personaje": "David Brent",
       "nombre_actor": "Ricky",
@@ -325,5 +324,5 @@
       ]
     }
   ]
-}
+
   
