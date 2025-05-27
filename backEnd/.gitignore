@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+
+# Build output (si aplicas)
+dist/
+build/
+
+# IDEs/editor configs
+.vscode/
+.idea/
+
+# Optional npm cache
+.npm/
+
+# TypeScript cache
+*.tsbuildinfo

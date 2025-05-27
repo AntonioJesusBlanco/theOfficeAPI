@@ -1,0 +1,11 @@
+<div *ngFor="let p of personajes">
+  <h2>{{ p.nombre_personaje }} ({{ p.version }})</h2>
+  <img [src]="p.foto" alt="{{ p.nombre_personaje }}" width="100" />
+  <p>Actor: {{ p.nombre_actor }} {{ p.apellido_actor }}</p>
+  <p>Primera aparición: {{ p.primera_aparicion }}</p>
+
+  <h3>Frases:</h3>
+  <ul>
+    <li *ngFor="let frase of p.frases">{{ frase.texto }} (Capítulos: {{ frase.capitulos.join(', ') }})</li>
+  </ul>
+</div>
