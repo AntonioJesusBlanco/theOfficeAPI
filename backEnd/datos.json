@@ -3,7 +3,7 @@
       "nombre_personaje": "David Brent",
       "nombre_actor": "Ricky",
       "apellido_actor": "Gervais",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/5/5e/David_Brent.jpg",
+      "foto": "http://localhost:3000/images/david_brent.webp",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "UK",
       "frases": [

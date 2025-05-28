@@ -1,11 +1,46 @@
-<div *ngFor="let p of personajes">
-  <h2>{{ p.nombre_personaje }} ({{ p.version }})</h2>
-  <img [src]="p.foto" alt="{{ p.nombre_personaje }}" width="100" />
-  <p>Actor: {{ p.nombre_actor }} {{ p.apellido_actor }}</p>
-  <p>Primera aparición: {{ p.primera_aparicion }}</p>
+<div class="container-fluid mt-3 px-0" style="min-height: 100vh;">
+  <!-- Presentación -->
+<div
+  class="text-center mb-5 text-white p-5 rounded-3 container-fluid"
+  style="background: linear-gradient(to right, #f8eeee, #ffffff);"
+>    <h1 class="display-4 " style="font-weight: 900; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #7a6767;">API de Personajes - The Office</h1>
 
-  <h3>Frases:</h3>
-  <ul>
-    <li *ngFor="let frase of p.frases">{{ frase.texto }} (Capítulos: {{ frase.capitulos.join(', ') }})</li>
-  </ul>
+    
+  </div>
+
+  <!-- Sección de personajes -->
+  <div class=" p-4 rounded shadow-sm px-0 rounded-4" style="background-color: #f7e5e5;">
+    <div class="row p-3">
+      <div
+        class="col-md-6 col-lg-4 mb-4"
+        *ngFor="let p of personajes"
+      >
+        <div class="card h-100">
+          <img
+            [src]="p.foto"
+            class="card-img-top"
+            alt="{{ p.nombre_personaje }}"
+            style="object-fit: cover; height: 550px; width: 100%;"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ p.nombre_personaje }}
+              <small class="text-muted">({{ p.version }})</small>
+            </h5>
+            <p class="card-text">
+              <strong>Actor:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}<br />
+              <strong>Primera aparición:</strong> {{ p.primera_aparicion }}
+            </p>
+            <h6>Frases:</h6>
+            <ul class="list-unstyled">
+              <li *ngFor="let frase of p.frases">
+                <em>"{{ frase.texto }}"</em><br />
+                <small class="text-muted">{{ frase.capitulos.join(', ') }}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
