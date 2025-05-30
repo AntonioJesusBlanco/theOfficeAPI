@@ -1,0 +1,67 @@
+<div class="container-fluid mt-3 px-0" style="min-height: 100vh;">
+  <!-- Presentación -->
+<div
+  class="d-flex align-items-center mb-5 p-5 rounded-3 container-fluid justify-content-center"
+  style="background: linear-gradient(to right, #f7e5e5, #ffffff, #f7e5e5);"
+>
+  <!-- Imagen a la izquierda -->
+  <img
+    src="assets/the_office.png"
+    alt="The Office"
+    style="height: 150px; width: auto; margin-right: 20px;"
+  />
+
+  <!-- Texto a la derecha -->
+  <div>
+    <h1
+      class="mb-0 display-2"
+      style="font-weight: 900; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #7a6767;"
+    >
+      The Office
+    </h1>
+    <small 
+      class="mb-0 display-6"
+      style="font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #76677a;"
+    >
+      API
+    </small>
+  </div>
+</div>
+
+
+  <!-- Sección de personajes -->
+  <div class="p-4 rounded shadow-sm px-0 rounded-4" style="background-color: #dba6fa;">
+  <div class="row g-3 p-1"> <!-- g-3 agrega espacio entre columnas y filas -->
+    <div
+      class="col-md-4"
+      *ngFor="let p of personajes"
+    >
+      <div class="card h-100 shadow-sm border-3" style="border-color: #cc75ff;"> 
+          <img
+            [src]="p.foto"
+            class="card-img-top"
+            alt="{{ p.nombre_personaje }}"
+            style="object-fit: cover; height: 550px; width: 100%;"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ p.nombre_personaje }}
+              <small class="text-muted">({{ p.version }})</small>
+            </h5>
+            <p class="card-text">
+              <strong>Actor:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}<br />
+              <strong>Primera aparición:</strong> {{ p.primera_aparicion }}
+            </p>
+            <h6>Frases:</h6>
+            <ul class="list-unstyled">
+              <li *ngFor="let frase of p.frases">
+                <em>"{{ frase.texto }}"</em><br />
+                <small class="text-muted">{{ frase.capitulos.join(', ') }}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

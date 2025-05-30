@@ -1,0 +1,124 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <!-- Menú lateral para escritorio -->
+    <nav class="col-md-3 d-none d-md-block sidebar">
+      <div class="menu-seccion">
+        <p>About me</p>
+        <hr />
+        <a href="#sobre-mi">Presentación</a>
+        <a href="#que-es-api">¿Qué es esta API?</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi">Presentación</a>
+        <a href="#que-es-api">¿Qué es esta API?</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi">Presentación</a>
+        <a href="#que-es-api">¿Qué es esta API?</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <!-- Botón de menú móvil -->
+    <div class="d-md-none mobile-menu-button">
+      <button (click)="mostrarMenu = !mostrarMenu">☰ Menú</button>
+    </div>
+
+    <!-- Menú emergente móvil -->
+    <div class="mobile-menu-overlay" *ngIf="mostrarMenu">
+      <div class="mobile-menu">
+        <button class="cerrar" (click)="mostrarMenu = false">✕</button>
+        <div class="menu-seccion">
+        <p>About me</p>
+        <hr />
+        <a href="#sobre-mi" (click)="mostrarMenu = false">Presentación</a>
+        <a href="#que-es-api" (click)="mostrarMenu = false">¿Qué es esta API?</a>
+        <a href="#tecnologias" (click)="mostrarMenu = false">Tecnologías</a>
+        <a href="#objetivos" (click)="mostrarMenu = false">Objetivos</a>
+        <a href="#contacto" (click)="mostrarMenu = false">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi" (click)="mostrarMenu = false">Presentación</a>
+        <a href="#que-es-api"  (click)="mostrarMenu = false">¿Qué es esta API?</a>
+        <a href="#tecnologias"  (click)="mostrarMenu = false">Tecnologías</a>
+        <a href="#objetivos"  (click)="mostrarMenu = false">Objetivos</a>
+        <a href="#contacto"  (click)="mostrarMenu = false">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi"  (click)="mostrarMenu = false">Presentación</a>
+        <a href="#que-es-api"  (click)="mostrarMenu = false">¿Qué es esta API?</a>
+        <a href="#tecnologias"  (click)="mostrarMenu = false">Tecnologías</a>
+        <a href="#objetivos"  (click)="mostrarMenu = false">Objetivos</a>
+        <a href="#contacto"  (click)="mostrarMenu = false">Contacto</a>
+      </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="col-md-9 contenido-principal">
+      <section id="sobre-mi" class="mb-5 seccion">
+        <h2 class="titulo-seccion">Presentación</h2>
+        <p>
+          Hola, me llamo <strong>[Tu Nombre]</strong> y soy desarrollador web con enfoque en tecnologías full-stack.
+          Este proyecto es una demostración práctica de mis habilidades utilizando <strong>Angular</strong> en el frontend y <strong>Node.js con Express</strong> en el backend.
+        </p>
+      </section>
+
+      <section id="que-es-api" class="mb-5 seccion">
+        <h2 class="titulo-seccion">📦 ¿Qué es esta API?</h2>
+        <p>
+          Esta API está dedicada a los personajes de la serie <em>The Office</em>. Proporciona información detallada sobre cada personaje, incluyendo:
+        </p>
+        <ul>
+          <li>Nombre del actor y del personaje</li>
+          <li>Primera aparición</li>
+          <li>Frases características y los capítulos en los que aparecen</li>
+          <li>Imagen del personaje</li>
+        </ul>
+        <p>Los datos están en un archivo JSON y se sirven desde un backend en Node.js.</p>
+      </section>
+
+      <section id="tecnologias" class="mb-5 seccion">
+        <h2 class="titulo-seccion">⚙️ Tecnologías utilizadas</h2>
+        <ul>
+          <li><strong>Frontend:</strong> Angular, Bootstrap</li>
+          <li><strong>Backend:</strong> Node.js, Express</li>
+          <li><strong>Otros:</strong> TypeScript, JSON como fuente de datos, CORS</li>
+        </ul>
+      </section>
+
+      <section id="objetivos" class="mb-5 seccion">
+        <h2 class="titulo-seccion">🎯 Objetivos del proyecto</h2>
+        <ul>
+          <li>Aprender y practicar el flujo completo de una aplicación API REST + SPA</li>
+          <li>Mostrar habilidades en diseño responsivo y consumo de APIs en Angular</li>
+          <li>Aplicar buenas prácticas de estructura modular</li>
+        </ul>
+      </section>
+
+      <section id="contacto" class="seccion">
+        <h2 class="titulo-seccion">📫 Contacto</h2>
+        <ul>
+          <li>GitHub: <a href="#">[Tu usuario]</a></li>
+          <li>LinkedIn: <a href="#">[Tu perfil]</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
