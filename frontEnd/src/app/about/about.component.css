@@ -11,7 +11,10 @@
 .seccion {
   margin-bottom: 3rem;
 }
-
+.menu-seccion a:hover {
+  color: #9a79ce;
+  font-weight: 600;
+}
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .contenido-principal {

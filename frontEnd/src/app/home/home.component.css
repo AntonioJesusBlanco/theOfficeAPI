@@ -1,0 +1,41 @@
+.min-vh {
+  min-height: 100vh;
+}
+
+.presentacion {
+  background-color: transparent; /* si quieres un fondo, puedes cambiarlo aquí */
+}
+
+.logo-the-office {
+  height: 150px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.titulo-the-office {
+  font-weight: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.subtitulo-the-office {
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+
+.tarjeta-personaje > img{
+
+    padding: 10px;
+}
+.imagen-personaje {
+  object-fit: cover;
+  height: 550px;
+  width: 100%;
+}
+.tarjeta-personaje{
+    border-style: solid;
+    border-width: 1px;
+    border-color:#9a79ce;
+}

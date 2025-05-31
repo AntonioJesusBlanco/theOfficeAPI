@@ -1,47 +1,33 @@
-<div class="container-fluid mt-3 px-0" style="min-height: 100vh;">
+<div class="container-fluid mt-3 px-0 min-vh">
   <!-- Presentación -->
-<div
-  class="d-flex align-items-center mb-5 p-5 rounded-3 container-fluid justify-content-center"
-  style="background: linear-gradient(to right, #f7e5e5, #ffffff, #f7e5e5);"
->
-  <!-- Imagen a la izquierda -->
-  <img
-    src="assets/the_office.png"
-    alt="The Office"
-    style="height: 150px; width: auto; margin-right: 20px;"
-  />
+  <div class="d-flex align-items-center mb-5 p-5 rounded-3 container-fluid justify-content-center presentacion">
+    <!-- Imagen a la izquierda -->
+    <img
+      src="assets/the_office.png"
+      alt="The Office"
+      class="logo-the-office"
+    />
 
-  <!-- Texto a la derecha -->
-  <div>
-    <h1
-      class="mb-0 display-2"
-      style="font-weight: 900; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #7a6767;"
-    >
-      The Office
-    </h1>
-    <small 
-      class="mb-0 display-6"
-      style="font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #76677a;"
-    >
-      API
-    </small>
+    <!-- Texto a la derecha -->
+    <div>
+      <h1 class="mb-0 display-2 titulo-the-office">
+        The Office
+      </h1>
+      <small class="mb-0 display-6 subtitulo-the-office">
+        API
+      </small>
+    </div>
   </div>
-</div>
-
 
   <!-- Sección de personajes -->
-  <div class="p-4 rounded shadow-sm px-0 rounded-4" style="background-color: #dba6fa;">
-  <div class="row g-3 p-1"> <!-- g-3 agrega espacio entre columnas y filas -->
-    <div
-      class="col-md-4"
-      *ngFor="let p of personajes"
-    >
-      <div class="card h-100 shadow-sm border-3" style="border-color: #cc75ff;"> 
+  <div class="p-4 rounded shadow-sm px-4 rounded-4">
+    <div class="row g-3 p-1"> <!-- g-3 agrega espacio entre columnas y filas -->
+      <div class="col-md-4" *ngFor="let p of personajes">
+        <div class="card h-100 shadow-sm tarjeta-personaje">
           <img
             [src]="p.foto"
-            class="card-img-top"
+            class="card-img-top imagen-personaje"
             alt="{{ p.nombre_personaje }}"
-            style="object-fit: cover; height: 550px; width: 100%;"
           />
           <div class="card-body">
             <h5 class="card-title">

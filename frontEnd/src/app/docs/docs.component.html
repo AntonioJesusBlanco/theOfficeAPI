@@ -1,1 +1,183 @@
-<p>docs works!</p>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <!-- Menú lateral para escritorio -->
+    <nav class="col-md-3 d-none d-md-block sidebar">
+      <div class="menu-seccion">
+        <p>About me</p>
+        <hr />
+        <a href="#sobre-mi">Presentación</a>
+        <a href="#que-es-api">¿Qué es esta API?</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi">Presentación</a>
+        <a href="#que-es-api">¿Qué es esta API?</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi">Presentación</a>
+        <a href="#que-es-api">¿Qué es esta API?</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <!-- Botón de menú móvil -->
+    <div class="d-md-none mobile-menu-button">
+      <button (click)="mostrarMenu = !mostrarMenu">☰ Menú</button>
+    </div>
+
+    <!-- Menú emergente móvil -->
+    <div class="mobile-menu-overlay" *ngIf="mostrarMenu">
+      <div class="mobile-menu">
+        <button class="cerrar" (click)="mostrarMenu = false">✕</button>
+        <div class="menu-seccion">
+        <p>About me</p>
+        <hr />
+        <a href="#sobre-mi" (click)="mostrarMenu = false">Presentación</a>
+        <a href="#que-es-api" (click)="mostrarMenu = false">¿Qué es esta API?</a>
+        <a href="#tecnologias" (click)="mostrarMenu = false">Tecnologías</a>
+        <a href="#objetivos" (click)="mostrarMenu = false">Objetivos</a>
+        <a href="#contacto" (click)="mostrarMenu = false">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi" (click)="mostrarMenu = false">Presentación</a>
+        <a href="#que-es-api"  (click)="mostrarMenu = false">¿Qué es esta API?</a>
+        <a href="#tecnologias"  (click)="mostrarMenu = false">Tecnologías</a>
+        <a href="#objetivos"  (click)="mostrarMenu = false">Objetivos</a>
+        <a href="#contacto"  (click)="mostrarMenu = false">Contacto</a>
+      </div>
+      <div class="menu-seccion">
+        <p>Documentación</p>
+        <hr />
+        <a href="#sobre-mi"  (click)="mostrarMenu = false">Presentación</a>
+        <a href="#que-es-api"  (click)="mostrarMenu = false">¿Qué es esta API?</a>
+        <a href="#tecnologias"  (click)="mostrarMenu = false">Tecnologías</a>
+        <a href="#objetivos"  (click)="mostrarMenu = false">Objetivos</a>
+        <a href="#contacto"  (click)="mostrarMenu = false">Contacto</a>
+      </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="col-md-7 contenido-principal">
+     <div class="documentacion-api">
+
+  <!-- Introducción -->
+  <section class="mb-5 seccion " style="white-space: pre-wrap;">
+    <h2>Documentación de la API: The Office</h2>
+    <p>
+      Esta API proporciona información sobre los personajes de la serie <strong>The Office</strong>.
+      A continuación, se describen las distintas peticiones que puedes realizar al servidor, los campos que contiene la respuesta y ejemplos prácticos.
+    </p>
+
+    <h3 class="mb-2">Obtener todos los personajes</h3>
+    <p><strong >Método:</strong> GET  </p>
+    <p><strong>URL:</strong> /api/characters  </p>
+    <p><strong>Descripción:</strong> Devuelve una lista con todos los personajes.</p>
+    <p><strong>Respuesta:</strong>  Un array de objetos, donde cada uno representa un personaje:</p>
+    <p><strong>Campos:</strong> </p>
+ 
+        <ul>
+            <li>actor → String → Nombre del actor</li>
+            <li>character → String → Nombre del personaje</li>
+            <li>firstAppearance → String → Primera aparición del personaje</li>
+            <li>quotes → Array → Lista de frases mas famosas</li>
+            <li>image → String → URL de la imagen del personaje</li>
+        </ul>
+
+
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/GetTodos.PNG" alt="Ejemplo de respuesta GET todos los personajes" style="max-width:100%;">
+  </section>
+
+  <!-- Obtener por nombre -->
+  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <h3>Obtener un personaje por nombre</h3>
+    
+    <p><strong>Método:</strong> GET  </p>
+    <p><strong>URL:</strong> /api/characters/:name</p>
+    <p><strong>Parámetros:</strong>  name → String → Nombre del personaje (en minúsculas y sin espacios)</p>
+    <p><strong>Descripción:</strong>  Devuelve un objeto con los datos del personaje solicitado.</p>
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/getNombre.PNG" alt="Ejemplo de respuesta GET por nombre" style="max-width:100%;">
+  </section>
+
+  <!-- POST: Añadir personaje -->
+  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <h3>Añadir un nuevo personaje</h3>
+    <p><strong>Método:</strong> POST  </p>
+    <p><strong>URL:</strong> /api/characters</p>
+    <p><strong>Descripción:</strong>  Añade un nuevo personaje a la base de datos.</p>
+    <p><strong>Cuerpo JSON esperado:</strong></p>
+    
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/peticionEsperada.PNG" alt="Petición JSON esperada para POST" style="max-width:100%;">
+  </section>
+
+  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <p><strong>Respuesta exitosa:</strong></p>
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/respuestaExitosa.PNG" alt="Respuesta exitosa de POST o PUT" style="max-width:100%;">
+  </section>
+
+    <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <p><strong>En caso de error:</strong> La respuesta será algo como:</p>
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/respuestaError.PNG" alt="Respuesta de error" style="max-width:100%;">
+  </section>
+
+  <!-- PUT: Actualizar personaje -->
+  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <h3>Actualizar un personaje existente</h3>
+    <p><strong>Método:</strong> PUT  </p>
+    <p><strong>URL:</strong> /api/characters/:id</p>
+    <p><strong>Descripción:</strong>  Actualiza la información de un personaje específico (por su ID).</p>
+    <p><strong>Cuerpo JSON esperado:</strong> Igual que en POST.</p>
+    
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/peticionEsperada.PNG" alt="Petición PUT esperada" style="max-width:100%;">
+  </section>
+
+  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <p><strong>Respuesta exitosa:</strong></p>
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/respuestaExitosa.PNG" alt="Respuesta exitosa de PUT" style="max-width:100%;">
+  </section>
+
+  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <p><strong>En caso de error:</strong> La respuesta será algo como:</p>
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/respuestaError.PNG" alt="Respuesta de error" style="max-width:100%;">
+  </section>
+
+</div>
+
+</div>

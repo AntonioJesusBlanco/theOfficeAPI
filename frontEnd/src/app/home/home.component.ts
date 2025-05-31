@@ -14,6 +14,7 @@ import { FiltroVersionPipe } from '../filtro-version.pipe';  // Asegúrate de qu
     FiltroVersionPipe
   ],
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   title = 'frontEnd';

@@ -13,6 +13,7 @@ import { FiltroVersionPipe } from './filtro-version.pipe';  // Asegúrate de que
     HttpClientModule,    // necesario para router-outlet
     FiltroVersionPipe
   ],
+  styleUrls: ['./app.component.css'],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
   personajes: Personaje[] = [];
   filtro: string = '';
   versionesDisponibles: string[] = [];
-
+menuAbierto = false;
   constructor(private personajesService: PersonajesService) {}
 
   ngOnInit() {
