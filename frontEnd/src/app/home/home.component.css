@@ -4,10 +4,11 @@
 
 .presentacion {
    background: linear-gradient(to bottom, #FFFFFF 0%, rgba(158, 117, 255, 0.1) 100%);
+
 }
 
 .logo-the-office {
-  height: 200px;
+  height: 170px;
   width: auto;
   margin-right: 20px;
 }
@@ -30,8 +31,7 @@
   object-fit: contain;
   height: 400px;
   width: 100%;
-    background-color: rgba(158, 117, 255, 0.02);
-
+  background-color: rgba(158, 117, 255, 0.02);
 }
 .tarjeta-personaje{
     border-style: solid;
@@ -42,7 +42,7 @@
 }
 .card-body{
   background-color: rgba(158, 117, 255, 0.05);
-  border-top: 1px solid rgba(158, 117, 255, 0.1);
+  border-top: 2px solid rgba(158, 117, 255, 0.1);
 }
 .tarjeta-personaje:hover {
     transform: scale(1.03);
