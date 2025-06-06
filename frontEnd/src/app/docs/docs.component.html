@@ -1,0 +1,150 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <!-- Menú lateral para escritorio -->
+    <nav class="col-md-3 sidebar">
+      <div class="menu-seccion">
+        <p>Documentacion</p>
+        <hr />
+        <a [routerLink]="[]" fragment="introduccion-documentacion">Introducción</a>
+        <a [routerLink]="[]" fragment="obtener-personajes-documentacion">Cómo obtener todos los personajes</a>
+        <a [routerLink]="[]" fragment="obtener-personaje-nombre-documentacion">Cómo obtener a un personaje por nombre</a>
+        <a [routerLink]="[]" fragment="anadir-personaje-documentacion">Cómo añadir un personaje</a>
+        <a [routerLink]="[]" fragment="actualizar-personaje-documentacion">Cómo actualizar a un personaje</a>
+
+      </div>
+      
+    </nav>
+
+    <!-- Botón de menú móvil -->
+    <div class="d-md-none mobile-menu-button">
+      <button (click)="mostrarMenu = !mostrarMenu">☰ Menú</button>
+    </div>
+
+    <!-- Menú emergente móvil -->
+    <div class="mobile-menu-overlay" *ngIf="mostrarMenu">
+      <div class="mobile-menu">
+        <button class="cerrar" (click)="mostrarMenu = false">✕</button>
+        <div class="menu-seccion">
+        <p>Documentacion</p>
+        <hr />
+        <a [routerLink]="[]" fragment="introduccion-documentacion">Introducción</a>
+        <a [routerLink]="[]" fragment="obtener-personajes-documentacion">Cómo obtener todos los personajes</a>
+        <a [routerLink]="[]" fragment="obtener-personaje-nombre-documentacion">Cómo obtener a un personaje por nombre</a>
+        <a [routerLink]="[]" fragment="anadir-personaje-documentacion">Cómo añadir un personaje</a>
+        <a [routerLink]="[]" fragment="actualizar-personaje-documentacion">Cómo actualizar a un personaje</a>
+
+      </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="col-md-7 contenido-principal">
+     <div class="documentacion-api">
+
+  <!-- Introducción -->
+  <section class="mb-5 seccion " style="white-space: pre-wrap;" id="introduccion-documentacion">
+    <h2>Documentación de la API: The Office</h2>
+    <p>
+      Esta <span class="subrayado">API</span> proporciona información sobre los personajes de la serie <span class="subrayado"><strong>The Office</strong></span> tanto de la version americana como de la inglesa.
+      A continuación, se describen las distintas peticiones que puedes realizar al servidor, los campos que contiene la respuesta y ejemplos prácticos sobre los mismos.
+    </p>
+    </section>
+<hr>
+    <section class="mb-4 seccion" style="white-space: pre-wrap;" id="obtener-personajes-documentacion">
+    <h3 class="mb-2" id>Obtener todos los personajes</h3>
+    <p class="mb-1"><strong >Método:</strong> GET </p>
+    <p class="mb-1"><strong>URL:</strong> /api/personajes  </p>
+    <p class="mb-1"><strong>Descripción:</strong> Devuelve una lista con <span class="subrayado">todos</span> los personajes.</p>
+    <p class="mb-2"><strong>Respuesta:</strong> Un array de objetos, donde cada uno representa un personaje:</p>
+    <p class="mb-0"><strong>Campos:</strong> </p>
+
+    <ul>
+      <li><span class="subrayado">nombre_actor</span> (String) Nombre del actor</li>
+      <li><span class="subrayado">apellido_actor</span> (String) Apellido del actor</li>
+      <li><span class="subrayado">nombre_personaje</span> (String) Nombre del personaje</li>
+      <li><span class="subrayado">primera_aparicion</span> (String) Primera aparición del personaje</li>
+      <li><span class="subrayado">version</span> (String) Versión de la serie (US/UK)</li>
+      <li><span class="subrayado">frases</span> (Array) (opcional) Lista de frases más famosas (cada una con texto y capítulos)</li>
+      <li><span class="subrayado">foto</span> (String) (opcional) URL de la imagen del personaje</li>
+    </ul>
+
+
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/GetTodos.PNG" alt="Ejemplo de respuesta GET todos los personajes" >
+  </section>
+<hr>
+  <!-- Obtener por nombre -->
+  <section class="mb-4 seccion" style="white-space: pre-wrap;" id="obtener-personaje-nombre-documentacion">
+    <h3 class="mb-2">Obtener un personaje por nombre</h3>
+    
+    <p class="mb-1"><strong>Método:</strong> GET  </p>
+    <p class="mb-1"><strong>URL:</strong> /api/personajes/:name</p>
+    <p class="mb-1"><strong>Parámetros:</strong>  name (String) Nombre del personaje (en minúsculas y sin espacios)</p>
+    <p class="mb-1"><strong>Descripción:</strong>  Devuelve un objeto con los datos del personaje solicitado.</p>
+  </section>
+
+  <section class="mb-5 seccion">
+    <img src="assets/getNombre.PNG" alt="Ejemplo de respuesta GET por nombre" >
+  </section>
+<hr>
+  <!-- POST: Añadir personaje -->
+  <section class="mb-4 seccion" style="white-space: pre-wrap;" id="anadir-personaje-documentacion">
+    <h3 class="mb-2">Añadir un nuevo personaje</h3>
+    <p class="mb-1"><strong>Método:</strong> POST  </p>
+    <p class="mb-1"><strong>URL:</strong> /api/personajes</p>
+    <p class="mb-1"><strong>Descripción:</strong>  Añade un nuevo personaje a la base de datos.</p>
+  </section>
+       
+     
+  <section class="mb-4 seccion">
+    <p class="mb-1"><strong>Cuerpo JSON esperado</strong></p>
+    <img src="assets/peticionEsperada.PNG" alt="Petición JSON esperada para POST" >
+  </section>
+
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <p><strong>Respuesta exitosa</strong></p>
+
+
+    <img src="assets/respuestaExitosaAnadir.PNG" alt="Respuesta exitosa de POST o PUT" >
+  </section>
+
+    <section class="mb-5 seccion" style="white-space: pre-wrap;">
+    <p><strong>En caso de error:</strong> La respuesta seran</p>
+ 
+    <img src="assets/respuestaErrorFaltaCampos.PNG" alt="Respuesta de error" >
+    <br>  
+    <img src="assets/respuestaErrorPersonajeExistente.PNG" alt="Respuesta de error" >
+
+  </section>
+<hr>
+  <!-- PUT: Actualizar personaje -->
+  <section class="mb-4 seccion" style="white-space: pre-wrap;" id="actualizar-personaje-documentacion">
+    <h3>Actualizar un personaje existente</h3>
+    <p class="mb-1"><strong>Método:</strong> PUT  </p>
+    <p class="mb-1"><strong>URL:</strong> /api/personajes/:name</p>
+    <p class="mb-1"><strong>Descripción:</strong>  Actualiza la información de un personaje específico (por su nombre).</p>
+      </section>
+  <section class="mb-4 seccion">
+
+    <p><strong>Cuerpo JSON esperado</strong> Igual que en POST.</p>
+    <img src="assets/peticionEsperada.PNG" alt="Petición PUT esperada" >
+  </section>
+
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <p><strong>Respuesta exitosa:</strong></p>
+  
+    <img src="assets/respuestaExitosaActualizar.PNG" alt="Respuesta exitosa de PUT" >
+  </section>
+
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <p><strong>En caso de error:</strong> La respuesta sera:</p>
+  
+    <img src="assets/respuestaErrorFaltaCampos.PNG" alt="Respuesta de error" >
+
+  </section>
+
+</div>
+
+</div>

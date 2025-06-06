@@ -1,0 +1,119 @@
+
+.min-vh {
+  min-height: 100vh;
+}
+
+.presentacion {
+   background: linear-gradient(to bottom, #FFFFFF 0%, rgba(166, 128, 255, 0.05)100%);
+
+}
+
+.logo-the-office {
+  height: 170px;
+  width: auto;
+  margin-right: 20px;
+}
+
+.titulo-the-office {
+  font-weight: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.subtitulo-the-office {
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+.tarjeta-personaje > img{
+    padding: 15px;
+}
+.imagen-personaje {
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  height: 400px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.tarjeta-personaje{
+    border-style: solid;
+    border-width: 1px;
+    border-color:white;
+    box-shadow: 0 0px 10px rgb(227, 217, 253);
+    background-color:rgba(158, 117, 255, 0.0);
+}
+.card-body{
+  background-color: rgba(255, 255, 255, 0.6);
+  border-top: 2px solid rgba(76, 0, 255, 0.1);
+}
+.tarjeta-personaje:hover,.tarjeta-personaje:focus {
+  transform: scale(1.06);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  background-color: rgba(158, 117, 255, 0.2);
+}
+.text-version{
+  color:grey
+}
+.text-actor:hover, .text-aparicion:hover, h5:hover, .text-version:hover, li:hover,.text-actor:focus, .text-aparicion:focus, h5:focus, .text-version:focus, li:focus  {
+  color:rgb(183, 0, 255);
+  
+}
+
+
+
+  
+  @media (min-width: 892px )  and (max-width: 1200px) {
+    .tarjeta-personaje {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+  
+    p{
+      font-size: 17px;
+    }
+    h1{
+      font-size: 29px;
+    }
+    .logo-the-office{
+      height: 180px;
+      width: auto;
+    }
+    li{
+      font-size: 17px;
+    }
+    .imagen-personaje {
+      height: 500px;
+    }
+    
+  }
+  @media (max-width: 891px) {
+    .tarjeta-personaje {
+        padding-right: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+     
+.imagen-personaje {
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+  height: 400px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+    p{
+      font-size: 14px;
+    }
+    h1{
+      font-size: 25px;
+    }
+    .logo-the-office{
+      height: 120px;
+      width: auto;
+    }
+    li{
+      font-size: 14px;
+    }
+    .imagen-personaje {
+      height: 400px;
+    }
+  }

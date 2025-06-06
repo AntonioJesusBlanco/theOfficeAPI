@@ -3,7 +3,7 @@
       "nombre_personaje": "David Brent",
       "nombre_actor": "Ricky",
       "apellido_actor": "Gervais",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/5/5e/David_Brent.jpg",
+      "foto": "/images/david_brent_hd.avif",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "UK",
       "frases": [
@@ -21,13 +21,13 @@
       "nombre_personaje": "Michael Scott",
       "nombre_actor": "Steve",
       "apellido_actor": "Carell",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png",
+      "foto": "/images/michael_scott_hd.webp",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
         {
           "texto": "That's what she said.",
-          "capitulos": ["Temporada 2, Episodio 2", "Temporada 3, Episodio 5"]
+          "capitulos": ["Temporada 2, Episodio 2", "Temporada 3, Episodio 5..."]
         },
         {
           "texto": "I am Beyoncé, always.",
@@ -39,7 +39,7 @@
       "nombre_personaje": "Tim Canterbury",
       "nombre_actor": "Martin",
       "apellido_actor": "Freeman",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/1/1e/Tim_Canterbury.jpg",
+      "foto": "/images/tim_canterbury_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "UK",
       "frases": [
@@ -57,7 +57,7 @@
       "nombre_personaje": "Jim Halpert",
       "nombre_actor": "John",
       "apellido_actor": "Krasinski",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/7/7e/Jim-halpert.jpg",
+      "foto": "/images/jim_halpert_hd.JPG",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -75,7 +75,7 @@
       "nombre_personaje": "Gareth Keenan",
       "nombre_actor": "Mackenzie",
       "apellido_actor": "Crook",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/3/3a/Gareth_Keenan.jpg",
+      "foto": "/images/gareth_keenan_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "UK",
       "frases": [
@@ -93,7 +93,7 @@
       "nombre_personaje": "Dwight Schrute",
       "nombre_actor": "Rainn",
       "apellido_actor": "Wilson",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg",
+      "foto": "/images/dwight_schrute_hd.JPG",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -111,7 +111,7 @@
       "nombre_personaje": "Dawn Tinsley",
       "nombre_actor": "Lucy",
       "apellido_actor": "Davis",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/4/4e/Dawn_Tinsley.jpg",
+      "foto": "/images/dawn_tinsley_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "UK",
       "frases": [
@@ -129,7 +129,7 @@
       "nombre_personaje": "Pam Beesly",
       "nombre_actor": "Jenna",
       "apellido_actor": "Fischer",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/6/67/Pam_Beesly.jpg",
+      "foto": "/images/pam_beesly_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -147,7 +147,7 @@
       "nombre_personaje": "Andy Bernard",
       "nombre_actor": "Ed",
       "apellido_actor": "Helms",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/8/8b/Andy_Bernard.jpg",
+      "foto": "/images/andy_bernard_hd.PNG",
       "primera_aparicion": "Temporada 3, Episodio 1",
       "version": "US",
       "frases": [
@@ -165,7 +165,7 @@
       "nombre_personaje": "Kelly Kapoor",
       "nombre_actor": "Mindy",
       "apellido_actor": "Kaling",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/5/56/Kelly_Kapoor.jpg",
+      "foto": "/images/kelly_kapoor_hd.PNG",
       "primera_aparicion": "Temporada 1, Episodio 2",
       "version": "US",
       "frases": [
@@ -183,7 +183,7 @@
       "nombre_personaje": "Ryan Howard",
       "nombre_actor": "B. J.",
       "apellido_actor": "Novak",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/8/80/Ryan_Howard_%28The_Office%29.jpg",
+      "foto": "/images/ryan_howard_hd.avif",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -201,7 +201,7 @@
       "nombre_personaje": "Angela Martin",
       "nombre_actor": "Angela",
       "apellido_actor": "Kinsey",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/0/0b/Angela_Martin.jpg",
+      "foto": "/images/angela_martin_hd.webp",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -219,7 +219,7 @@
       "nombre_personaje": "Oscar Martinez",
       "nombre_actor": "Oscar",
       "apellido_actor": "Nunez",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/b/b1/Oscar_Martinez_%28The_Office%29.jpg",
+      "foto": "/images/oscar_martinez_hd.JPG",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -237,7 +237,7 @@
       "nombre_personaje": "Phyllis Vance",
       "nombre_actor": "Phyllis",
       "apellido_actor": "Smith",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/0/07/Phyllis_Vance.jpg",
+      "foto": "/images/phylis_vance.webp",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -255,7 +255,7 @@
       "nombre_personaje": "Stanley Hudson",
       "nombre_actor": "Leslie",
       "apellido_actor": "David Baker",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/3/3c/Stanley_Hudson.jpg",
+      "foto": "/images/stanley_hudson_hd.webp",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -273,7 +273,7 @@
       "nombre_personaje": "Creed Bratton",
       "nombre_actor": "Creed",
       "apellido_actor": "Bratton",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/3/3c/Creed_Bratton.jpg",
+      "foto": "/images/creed_bratton_hd.avif",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -291,7 +291,7 @@
       "nombre_personaje": "Meredith Palmer",
       "nombre_actor": "Kate",
       "apellido_actor": "Flannery",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/0/0c/Meredith_Palmer.jpg",
+      "foto": "/images/meredith_palmer_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -309,7 +309,7 @@
       "nombre_personaje": "Toby Flenderson",
       "nombre_actor": "Paul",
       "apellido_actor": "Lieberstein",
-      "foto": "https://upload.wikimedia.org/wikipedia/en/0/0b/Toby_Flenderson.jpg",
+      "foto": "/images/toby_flenderson_hd.avif",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [

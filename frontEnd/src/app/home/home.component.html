@@ -1,0 +1,50 @@
+<div class="container-fluid mt-3 px-0 min-vh">
+  <!-- Presentación -->
+  <div class="d-flex align-items-center mt-5 p-5 rounded-3 container-fluid justify-content-center presentacion">
+    <!-- Imagen a la izquierda -->
+    <img
+      src="assets/the_office.png"
+      alt="The Office"
+      class="logo-the-office"
+    />
+
+    <!-- Texto a la derecha -->
+    <div>
+      <h1 class="mb-0 display-2 titulo-the-office">
+        The Office
+      </h1>
+      <small class="mb-0 display-6 subtitulo-the-office">
+        API
+      </small>
+    </div>
+  </div>
+  <div class="rounded shadow-sm contenedor-personajes" style="background-color: rgba(166, 128, 255, 0.05);" >
+    <div class="row p-5 fila"> 
+      <div class="col-xl-4 pb-5" *ngFor="let p of personajes">
+        <div class="card h-100 tarjeta-personaje">
+          <img
+            [src]="'http://localhost:3000' + p.foto"
+            class="card-img-top imagen-personaje"
+            alt="{{ p.nombre_personaje }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ p.nombre_personaje }} ({{ p.version }})
+            </h5>
+            <p class="card-text d-inline text-actor" >
+              <strong >Actor/Actriz:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}</p>
+              <p class="text-aparicion"><strong >Primera aparición:</strong> {{ p.primera_aparicion }}
+            </p>
+            <h6>Frases:</h6>
+            <ul class="list-unstyled">
+              <li *ngFor="let frase of p.frases">
+                <em>"{{ frase.texto }}"</em><br />
+                <small class="text-muted">{{ frase.capitulos.join(', ') }}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

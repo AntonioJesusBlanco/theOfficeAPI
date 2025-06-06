@@ -1,0 +1,92 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <!-- Menú lateral para escritorio -->
+    <nav class="col-md-3 d-none d-md-block sidebar">
+      <div class="menu-seccion">
+        <p>Sobre mi</p>
+        <hr />
+        <a [routerLink]="[]" fragment="introduccion-sobre-mi">Presentacion</a>
+        <a [routerLink]="[]" fragment="definicion-sobre-mi">¿Que es esta API?</a>
+        <a [routerLink]="[]" fragment="tecnologias-sobre-mi">Tecnologias utilizadas</a>
+        <a [routerLink]="[]" fragment="objetivos-sobre-mi">Objetivos del proyecto</a>
+        <a [routerLink]="[]" fragment="contacto-sobre-mi">Contacto</a>
+
+      </div>
+      
+    </nav>
+
+    <!-- Botón de menú móvil -->
+    <div class="d-md-none mobile-menu-button">
+      <button (click)="mostrarMenu = !mostrarMenu">☰ Menú</button>
+    </div>
+
+    <!-- Menú emergente móvil -->
+    <div class="mobile-menu-overlay" *ngIf="mostrarMenu">
+      <div class="mobile-menu">
+        <button class="cerrar" (click)="mostrarMenu = false">✕</button>
+        <div class="menu-seccion">
+        <p>Sobre mi</p>
+        <hr />
+        <a [routerLink]="[]" fragment="introduccion-sobre-mi">Presentacion</a>
+        <a [routerLink]="[]" fragment="definicion-sobre-mi">¿Que es esta API?</a>
+        <a [routerLink]="[]" fragment="tecnologias-sobre-mi">Tecnologias utilizadas</a>
+        <a [routerLink]="[]" fragment="objetivos-sobre-mi">Objetivos del proyecto</a>
+        <a [routerLink]="[]" fragment="contacto-sobre-mi">Contacto</a>
+</div>
+     
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="col-md-7 contenido-principal">
+      <section class="mb-5 seccion" id="introduccion-sobre-mi">
+        <h2 class="titulo-seccion">Presentación</h2>
+        <p>
+          Mi nombre es <span class="subrayado">Antonio Jesus Blanco Guillen</span> y soy <span class="subrayado">desarrollador web.</span>
+          Este proyecto es una demostración práctica de mis habilidades utilizando <span class="subrayado"> Angular</span> en el frontend y <span class="subrayado">Node.js con Express </span>en el backend.
+        </p>
+      </section>
+<hr>
+      <section class="mb-5 seccion" id="definicion-sobre-mi">
+        <h2 class="titulo-seccion">¿Qué es esta API?</h2>
+        <p>
+          Esta API está dedicada a los personajes de la serie <span class="subrayado">The Office</span>. Proporciona información detallada sobre cada personaje, incluyendo:
+        </p>
+        <ul>
+          <li>Nombre del actor y del personaje</li>
+          <li>Primera aparición</li>
+          <li>Frases características y los capítulos en los que aparecen</li>
+          <li>Imagen del personaje</li>
+        </ul>
+        <p>Los datos están en un archivo <span class="subrayado">JSON</span> y se sirven desde un backend en <span class="subrayado">Node.js</span>.</p>
+      </section>
+<hr>
+      <section class="mb-5 seccion" id="tecnologias-sobre-mi">
+        <h2 class="titulo-seccion">Tecnologías utilizadas</h2>
+        
+        <p><strong>Frontend:</strong> <span class="subrayado"> Angular, Bootstrap</span> </p>
+        <p><strong>Backend:</strong> <span class="subrayado">Node.js, Express</span></p>
+        <p><strong>Otros:</strong> <span class="subrayado">TypeScript</span>, <span class="subrayado">JSON</span> como fuente de datos, <span class="subrayado">CORS</span></p>
+        
+      </section>
+<hr>
+      <section class="mb-5 seccion" id="objetivos-sobre-mi">
+        <h2 class="titulo-seccion">Objetivos del proyecto</h2>
+        
+        <p>Aprender y practicar el flujo completo de una aplicación <span class="subrayado">API REST + SPA</span> </p>
+        <p>Mostrar habilidades en diseño responsivo y consumo de APIs en Angular </p>
+        <p>Aplicar buenas prácticas de estructura modular </p>
+        
+      </section>
+<hr>
+      <section class="seccion" id="contacto-sobre-mi">
+        <h2 class="titulo-seccion">Contacto</h2>
+
+          <a href="https://github.com/AntonioJesusBlanco">GitHub</a>
+          <br>
+          <a href="https://www.linkedin.com/in/antonio-jes%C3%BAs-blanco-guillen-27297a185/">LinkedIn</a>
+
+      </section>
+    </div>
+  </div>
+</div>

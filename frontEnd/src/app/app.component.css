@@ -1,0 +1,52 @@
+.custom-navbar {
+  background-color:  rgb(220, 217, 252);
+  padding-left: 2rem;   /* separación a los lados */
+  padding-right: 2rem;
+  box-shadow: 0 2px 6px rgba(204, 117, 255, 0.3);
+}
+
+.custom-navbar-brand {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #3a0ca3;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-navbar-brand:hover {
+  color: #6a0dad;
+  text-decoration: none;
+}
+
+.custom-navbar-nav .nav-link {
+  font-weight: 600;
+  color: #3a0ca3;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar-nav .nav-link:hover,
+.custom-navbar-nav .nav-link.active {
+  color: #6a0dad;
+  text-decoration: underline;
+}
+
+/* Margen extra a la derecha de la imagen para que se "desplace" un poco */
+.logo-margin {
+  margin-right: 2rem; /* ajusta a tu gusto */
+}
+
+/* Para que los enlaces estén bastante a la derecha en pantallas grandes */
+@media (min-width: 992px) {
+  .custom-navbar-nav {
+    margin-left: 10rem; /* empuja los links hacia la derecha */
+  }
+}
+@media (max-width: 991px) {
+  .menu{
+    margin-top: 20px;
+}
+}
+/* Para que el ul tenga columna en móvil y fila en grande */
+.custom-navbar-nav {
+  gap: 1rem; /* espacio entre links */
+}
