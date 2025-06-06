@@ -1,13 +1,28 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ViewportScroller, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],  // ✅ Aquí se importa el módulo que permite usar *ngIf, *ngFor, etc.
+  imports: [CommonModule, RouterModule],
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.css']
 })
-export class DocsComponent {
+export class DocsComponent implements AfterViewInit {
   mostrarMenu = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private viewportScroller: ViewportScroller
+  ) {}
+
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        
+          this.viewportScroller.scrollToAnchor(fragment);
+      }
+    });
+  }
 }

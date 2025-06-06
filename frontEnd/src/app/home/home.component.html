@@ -18,10 +18,10 @@
       </small>
     </div>
   </div>
-  <div class="p-5 rounded shadow-sm contenedor-personajes" style="background-color: rgba(158, 117, 255, 0.1);" >
-    <div class="row g-3 p-1"> 
-      <div class="col-lg-4 " *ngFor="let p of personajes">
-        <div class="card h-100 tarjeta-personaje "style="background-color:rgba(158, 117, 255, 0.0)">
+  <div class="rounded shadow-sm contenedor-personajes" style="background-color: rgba(166, 128, 255, 0.05);" >
+    <div class="row p-5 fila"> 
+      <div class="col-xl-4 pb-5" *ngFor="let p of personajes">
+        <div class="card h-100 tarjeta-personaje">
           <img
             [src]="'http://localhost:3000' + p.foto"
             class="card-img-top imagen-personaje"
@@ -29,12 +29,11 @@
           />
           <div class="card-body">
             <h5 class="card-title">
-              {{ p.nombre_personaje }}
-              <small class="text-muted">({{ p.version }})</small>
+              {{ p.nombre_personaje }} ({{ p.version }})
             </h5>
-            <p class="card-text">
-              <strong>Actor:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}<br />
-              <strong>Primera aparición:</strong> {{ p.primera_aparicion }}
+            <p class="card-text d-inline text-actor" >
+              <strong >Actor/Actriz:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}</p>
+              <p class="text-aparicion"><strong >Primera aparición:</strong> {{ p.primera_aparicion }}
             </p>
             <h6>Frases:</h6>
             <ul class="list-unstyled">
