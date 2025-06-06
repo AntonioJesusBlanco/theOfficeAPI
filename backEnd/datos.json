@@ -57,7 +57,7 @@
       "nombre_personaje": "Jim Halpert",
       "nombre_actor": "John",
       "apellido_actor": "Krasinski",
-      "foto": "/images/jim_halpert_hd.JPG",
+      "foto": "/images/jim_halpert_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -219,7 +219,7 @@
       "nombre_personaje": "Oscar Martinez",
       "nombre_actor": "Oscar",
       "apellido_actor": "Nunez",
-      "foto": "/images/oscar_martinez_hd.JPG",
+      "foto": "/images/oscar_martinez_hd.jpg",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
