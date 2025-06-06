@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 // Servir frontend Angular estático (antes de las rutas API)
-app.use(express.static(path.join(__dirname, '../frontEnd/dist/front-end/browser')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API REST
 app.get('/api/personajes', (req, res) => {
@@ -71,7 +71,7 @@ app.put('/api/personajes/:name', (req, res) => {
 
 // Manejar todas las demás rutas con el index.html para Angular routing
 app.get(/^\/(?!api).*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontEnd/dist/front-end/browser/index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
