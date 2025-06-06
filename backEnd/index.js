@@ -16,73 +16,62 @@ app.use((req, res, next) => {
   next();
 });
 
-// Obtener todos los personajes
+// Servir frontend Angular estático (antes de las rutas API)
+app.use(express.static(path.join(__dirname, '../frontEnd/dist/front-end/browser')));
+
+// API REST
 app.get('/api/personajes', (req, res) => {
   res.json(personajes);
 });
 
-// Obtener personaje por nombre
 app.get('/api/personajes/:name', (req, res) => {
   const nameParam = req.params.name.toLowerCase().replace(/\s+/g, '');
   const personaje = personajes.find(p =>
     p.nombre_personaje.toLowerCase().replace(/\s+/g, '') === nameParam
   );
-
   if (!personaje) {
     return res.status(404).json({ error: 'Personaje no encontrado' });
   }
-
   res.json(personaje);
 });
 
-// Añadir nuevo personaje (simulado)
 app.post('/api/personajes', (req, res) => {
   const nuevo = req.body;
-
-  // Validación de campos requeridos
   const camposRequeridos = ['nombre_personaje', 'nombre_actor', 'apellido_actor', 'primera_aparicion', 'version'];
   const faltantes = camposRequeridos.filter(campo => !nuevo[campo]);
-
   if (faltantes.length > 0) {
     return res.status(400).json({ error: `Faltan campos requeridos: ${faltantes.join(', ')}` });
   }
-
-  // Evitar duplicados
   const nameParam = nuevo.nombre_personaje.toLowerCase().replace(/\s+/g, '');
   const existe = personajes.find(p =>
     p.nombre_personaje.toLowerCase().replace(/\s+/g, '') === nameParam
   );
-
   if (existe) {
     return res.status(409).json({ error: 'Personaje ya existente' });
   }
-
-  // Simulación de guardado
   res.status(201).json({ message: 'Personaje añadido con éxito (simulado)' });
 });
 
-// Actualizar personaje existente (simulado)
 app.put('/api/personajes/:name', (req, res) => {
   const nameParam = req.params.name.toLowerCase().replace(/\s+/g, '');
   const actualizado = req.body;
-
   const personaje = personajes.find(p =>
     p.nombre_personaje.toLowerCase().replace(/\s+/g, '') === nameParam
   );
-
   if (!personaje) {
     return res.status(404).json({ error: 'Personaje no encontrado' });
   }
-
-  // Validación de campos requeridos
   const camposRequeridos = ['nombre_personaje', 'nombre_actor', 'apellido_actor', 'primera_aparicion', 'version'];
   const faltantes = camposRequeridos.filter(campo => !actualizado[campo]);
-
   if (faltantes.length > 0) {
     return res.status(400).json({ error: `Faltan campos requeridos: ${faltantes.join(', ')}` });
   }
-
   res.json({ message: `Personaje ${actualizado.nombre_personaje} actualizado correctamente (simulado)` });
+});
+
+// Manejar todas las demás rutas con el index.html para Angular routing
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontEnd/dist/front-end/browser/index.html'));
 });
 
 app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
