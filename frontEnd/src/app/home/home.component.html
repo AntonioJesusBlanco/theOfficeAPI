@@ -23,7 +23,7 @@
       <div class="col-xl-4 pb-5" *ngFor="let p of personajes">
         <div class="card h-100 tarjeta-personaje">
           <img
-            [src]="'http://localhost:3000' + p.foto"
+            [src]="p.foto"
             class="card-img-top imagen-personaje"
             alt="{{ p.nombre_personaje }}"
           />
