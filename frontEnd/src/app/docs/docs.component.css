@@ -21,6 +21,9 @@ body {
   margin-bottom: 1rem;
 }
 
+.subrayado{
+  text-decoration: underline;
+}
 /* =======================
    Secciones API 
 ========================== */
@@ -61,8 +64,9 @@ body {
 }
 
 .menu-seccion a:hover {
-  color: #9a79ce;
-  font-weight: 600;
+  color: #753ece;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 
 section h2{
@@ -120,14 +124,16 @@ section > p{
 }
 
 .mobile-menu-button button {
-  background-color: #9a79ce;
+  background-color: rgb(205, 201, 255);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   font-size: 1.1rem;
   border-radius: 4px;
 }
-
+.mobile-menu-button button:hover, .mobile-menu-button button:focus{
+  background-color: rgb(182, 177, 255);
+}
 .mobile-menu-overlay {
   position: fixed;
   top: 0;

@@ -45,26 +45,28 @@
   <section class="mb-5 seccion " style="white-space: pre-wrap;" id="introduccion-documentacion">
     <h2>Documentación de la API: The Office</h2>
     <p>
-      Esta API proporciona información sobre los personajes de la serie <strong>The Office</strong>.
-      A continuación, se describen las distintas peticiones que puedes realizar al servidor, los campos que contiene la respuesta y ejemplos prácticos.
+      Esta <span class="subrayado">API</span> proporciona información sobre los personajes de la serie <span class="subrayado"><strong>The Office</strong></span> tanto de la version americana como de la inglesa.
+      A continuación, se describen las distintas peticiones que puedes realizar al servidor, los campos que contiene la respuesta y ejemplos prácticos sobre los mismos.
     </p>
     </section>
 <hr>
-<section class="mb-5 seccion" style="white-space: pre-wrap;" id="obtener-personajes-documentacion">
+    <section class="mb-4 seccion" style="white-space: pre-wrap;" id="obtener-personajes-documentacion">
     <h3 class="mb-2" id>Obtener todos los personajes</h3>
-    <p><strong >Método:</strong> GET  </p>
-    <p><strong>URL:</strong> /api/characters  </p>
-    <p><strong>Descripción:</strong> Devuelve una lista con todos los personajes.</p>
-    <p><strong>Respuesta:</strong>  Un array de objetos, donde cada uno representa un personaje:</p>
-    <p><strong>Campos:</strong> </p>
- 
-        <ul>
-            <li>actor → String → Nombre del actor</li>
-            <li>character → String → Nombre del personaje</li>
-            <li>firstAppearance → String → Primera aparición del personaje</li>
-            <li>quotes → Array → Lista de frases mas famosas</li>
-            <li>image → String → URL de la imagen del personaje</li>
-        </ul>
+    <p class="mb-1"><strong >Método:</strong> GET </p>
+    <p class="mb-1"><strong>URL:</strong> /api/characters  </p>
+    <p class="mb-1"><strong>Descripción:</strong> Devuelve una lista con <span class="subrayado">todos</span> los personajes.</p>
+    <p class="mb-2"><strong>Respuesta:</strong> Un array de objetos, donde cada uno representa un personaje:</p>
+    <p class="mb-0"><strong>Campos:</strong> </p>
+
+    <ul>
+      <li><span class="subrayado">nombre_actor</span> → String → Nombre del actor</li>
+      <li><span class="subrayado">apellido_actor</span> → String → Apellido del actor</li>
+      <li><span class="subrayado">nombre_personaje</span> → String → Nombre del personaje</li>
+      <li><span class="subrayado">primera_aparicion</span> → String → Primera aparición del personaje</li>
+      <li><span class="subrayado">version</span> → String → Versión de la serie (US/UK)</li>
+      <li><span class="subrayado">frases</span> → Array (opcional) → Lista de frases más famosas (cada una con texto y capítulos)</li>
+      <li><span class="subrayado">foto</span> → String (opcional) → URL de la imagen del personaje</li>
+    </ul>
 
 
   </section>
@@ -74,13 +76,13 @@
   </section>
 <hr>
   <!-- Obtener por nombre -->
-  <section class="mb-5 seccion" style="white-space: pre-wrap;" id="obtener-personaje-nombre-documentacion">
-    <h3>Obtener un personaje por nombre</h3>
+  <section class="mb-4 seccion" style="white-space: pre-wrap;" id="obtener-personaje-nombre-documentacion">
+    <h3 class="mb-2">Obtener un personaje por nombre</h3>
     
-    <p><strong>Método:</strong> GET  </p>
-    <p><strong>URL:</strong> /api/characters/:name</p>
-    <p><strong>Parámetros:</strong>  name → String → Nombre del personaje (en minúsculas y sin espacios)</p>
-    <p><strong>Descripción:</strong>  Devuelve un objeto con los datos del personaje solicitado.</p>
+    <p class="mb-1"><strong>Método:</strong> GET  </p>
+    <p class="mb-1"><strong>URL:</strong> /api/characters/:name</p>
+    <p class="mb-1"><strong>Parámetros:</strong>  name → String → Nombre del personaje (en minúsculas y sin espacios)</p>
+    <p class="mb-1"><strong>Descripción:</strong>  Devuelve un objeto con los datos del personaje solicitado.</p>
   </section>
 
   <section class="mb-5 seccion">
@@ -88,63 +90,60 @@
   </section>
 <hr>
   <!-- POST: Añadir personaje -->
-  <section class="mb-5 seccion" style="white-space: pre-wrap;" id="anadir-personaje-documentacion">
-    <h3>Añadir un nuevo personaje</h3>
-    <p><strong>Método:</strong> POST  </p>
-    <p><strong>URL:</strong> /api/characters</p>
-    <p><strong>Descripción:</strong>  Añade un nuevo personaje a la base de datos.</p>
-    <p><strong>Cuerpo JSON esperado:</strong></p>
-    
+  <section class="mb-4 seccion" style="white-space: pre-wrap;" id="anadir-personaje-documentacion">
+    <h3 class="mb-2">Añadir un nuevo personaje</h3>
+    <p class="mb-1"><strong>Método:</strong> POST  </p>
+    <p class="mb-1"><strong>URL:</strong> /api/characters</p>
+    <p class="mb-1"><strong>Descripción:</strong>  Añade un nuevo personaje a la base de datos.</p>
   </section>
-
-  <section class="mb-5 seccion">
+       
+     
+  <section class="mb-4 seccion">
+    <p class="mb-1"><strong>Cuerpo JSON esperado</strong></p>
     <img src="assets/peticionEsperada.PNG" alt="Petición JSON esperada para POST" style="max-width:100%;">
   </section>
 
-  <section class="mb-5 seccion" style="white-space: pre-wrap;">
-    <p><strong>Respuesta exitosa:</strong></p>
-  </section>
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <p><strong>Respuesta exitosa</strong></p>
+  
 
-  <section class="mb-5 seccion">
-    <img src="assets/respuestaExitosa.PNG" alt="Respuesta exitosa de POST o PUT" style="max-width:100%;">
+
+    <img src="assets/respuestaExitosaAnadir.PNG" alt="Respuesta exitosa de POST o PUT" style="max-width:100%;">
   </section>
 
     <section class="mb-5 seccion" style="white-space: pre-wrap;">
-    <p><strong>En caso de error:</strong> La respuesta será algo como:</p>
-  </section>
+    <p><strong>En caso de error:</strong> La respuesta seran</p>
+ 
+    <img src="assets/respuestaErrorFaltaCampos.PNG" alt="Respuesta de error" style="max-width:100%;">
+    <br>  
+    <img src="assets/respuestaErrorPersonajeExistente.PNG" alt="Respuesta de error" style="max-width:100%;">
 
-  <section class="mb-5 seccion">
-    <img src="assets/respuestaError.PNG" alt="Respuesta de error" style="max-width:100%;">
   </section>
 <hr>
   <!-- PUT: Actualizar personaje -->
-  <section class="mb-5 seccion" style="white-space: pre-wrap;" id="actualizar-personaje-documentacion">
+  <section class="mb-4 seccion" style="white-space: pre-wrap;" id="actualizar-personaje-documentacion">
     <h3>Actualizar un personaje existente</h3>
-    <p><strong>Método:</strong> PUT  </p>
-    <p><strong>URL:</strong> /api/characters/:id</p>
-    <p><strong>Descripción:</strong>  Actualiza la información de un personaje específico (por su ID).</p>
-    <p><strong>Cuerpo JSON esperado:</strong> Igual que en POST.</p>
-    
-  </section>
+    <p class="mb-1"><strong>Método:</strong> PUT  </p>
+    <p class="mb-1"><strong>URL:</strong> /api/characters/:id</p>
+    <p class="mb-1"><strong>Descripción:</strong>  Actualiza la información de un personaje específico (por su ID).</p>
+      </section>
+  <section class="mb-4 seccion">
 
-  <section class="mb-5 seccion">
+    <p><strong>Cuerpo JSON esperado</strong> Igual que en POST.</p>
     <img src="assets/peticionEsperada.PNG" alt="Petición PUT esperada" style="max-width:100%;">
   </section>
 
-  <section class="mb-5 seccion" style="white-space: pre-wrap;">
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
     <p><strong>Respuesta exitosa:</strong></p>
+  
+    <img src="assets/respuestaExitosaActualizar.PNG" alt="Respuesta exitosa de PUT" style="max-width:100%;">
   </section>
 
-  <section class="mb-5 seccion">
-    <img src="assets/respuestaExitosa.PNG" alt="Respuesta exitosa de PUT" style="max-width:100%;">
-  </section>
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <p><strong>En caso de error:</strong> La respuesta sera:</p>
+  
+    <img src="assets/respuestaErrorFaltaCampos.PNG" alt="Respuesta de error" style="max-width:100%;">
 
-  <section class="mb-5 seccion" style="white-space: pre-wrap;">
-    <p><strong>En caso de error:</strong> La respuesta será algo como:</p>
-  </section>
-
-  <section class="mb-5 seccion">
-    <img src="assets/respuestaError.PNG" alt="Respuesta de error" style="max-width:100%;">
   </section>
 
 </div>
