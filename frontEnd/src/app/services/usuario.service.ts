@@ -21,7 +21,7 @@ export interface Personaje {
   providedIn: 'root'
 })
 export class PersonajesService {
-  private apiUrl = 'http://localhost:3000/api/personajes';
+  private apiUrl = 'https://theofficeapi-production.up.railway.app/api/personajes';
 
   constructor(private http: HttpClient) {}
 
