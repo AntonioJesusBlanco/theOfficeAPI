@@ -1,61 +1,56 @@
-/* Estilos generales */
+/* =======================
+   Estilos generales
+========================== */
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
 .contenido-principal {
-  padding-right: 30%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff;
 }
 
 .titulo-seccion {
   font-weight: 900;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
-.seccion {
-  margin-bottom: 3rem;
-}
-.menu-seccion a:hover {
-  color: #753ece;
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-}
 .subrayado{
   text-decoration: underline;
 }
-a{
-  color: blueviolet;
-  text-decoration: none;
-}
-a:hover{
-  text-decoration: underline;
-}
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  .contenido-principal {
-    padding: 0 1rem;
-    text-align: center;
-  }
+/* =======================
+   Secciones API 
+========================== */
 
-  .contenido-principal p,
-  .contenido-principal ul,
-  .contenido-principal li {
-    font-size: 0.95rem;
-  }
-  li{
-list-style-type: none;
-  }
 
-  .titulo-seccion {
-    font-size: 1.25rem;
-  }
+.seccion img {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
 }
+
+/* =======================
+   Sidebar
+========================== */
 .sidebar {
   padding-left: 10%;
   position: sticky;
-  top: 0;
+  top: 5rem;
   height: 100vh;
 }
 
 .menu-seccion {
   margin-bottom: 2rem;
+
 }
+
 
 .menu-seccion p {
   font-weight: bold;
@@ -67,28 +62,62 @@ list-style-type: none;
   margin: 0.4rem 0;
   color: black;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
-.contenido-principal {
-  padding: 2rem;
+.menu-seccion a:hover {
+  color: #753ece;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 
-.titulo-seccion {
-  font-weight: 900;
-  margin-bottom: 1rem;
+section h2{
+    font-weight: 900;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+section h3{
+    font-weight: 700;
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+section > p{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
-ul {
-  padding-left: 1.2rem;
-  list-style-type: none;
+
+/* =======================
+   Responsive (Mobile)
+========================== */
+@media (max-width: 768px) {
+  .contenido-principal {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .contenido-principal p,
+  .contenido-principal ul,
+  .contenido-principal li {
+    font-size: 0.85rem;
+  }
+
+  h3, h2{
+    font-size: 1.20rem;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
 }
 
-ul li::before {
-  content: "•";
-  margin-right: 0.5rem;
-  color: #444;
-}
-
+/* =======================
+   Mobile Menu
+========================== */
 .mobile-menu-button {
   position: static;
   top: 10px;
@@ -107,7 +136,6 @@ ul li::before {
 .mobile-menu-button button:hover, .mobile-menu-button button:focus{
   background-color: rgb(182, 177, 255);
 }
-
 .mobile-menu-overlay {
   position: fixed;
   top: 0;
@@ -138,6 +166,11 @@ ul li::before {
   text-decoration: none;
 }
 
+.mobile-menu a:hover {
+  color: #9a79ce;
+  font-weight: 600;
+}
+
 .cerrar {
   position: absolute;
   top: 10px;
@@ -145,4 +178,19 @@ ul li::before {
   background: none;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* =======================
+   Listas sin viñetas
+========================== */
+ul {
+  padding-left: 1.2rem;
+  list-style-type: none;
+}
+
+ul li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: #444;
 }

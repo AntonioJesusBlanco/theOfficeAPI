@@ -57,7 +57,7 @@
       "nombre_personaje": "Jim Halpert",
       "nombre_actor": "John",
       "apellido_actor": "Krasinski",
-      "foto": "/images/jim_halpert_hd.jpg",
+      "foto": "/images/jim_halpert_hd.JPG",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -93,7 +93,7 @@
       "nombre_personaje": "Dwight Schrute",
       "nombre_actor": "Rainn",
       "apellido_actor": "Wilson",
-      "foto": "/images/dwight_schrute_hd.jpeg",
+      "foto": "/images/dwight_schrute_hd.JPG",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [
@@ -147,7 +147,7 @@
       "nombre_personaje": "Andy Bernard",
       "nombre_actor": "Ed",
       "apellido_actor": "Helms",
-      "foto": "/images/andy_bernard_hd.webp",
+      "foto": "/images/andy_bernard_hd.PNG",
       "primera_aparicion": "Temporada 3, Episodio 1",
       "version": "US",
       "frases": [
@@ -165,7 +165,7 @@
       "nombre_personaje": "Kelly Kapoor",
       "nombre_actor": "Mindy",
       "apellido_actor": "Kaling",
-      "foto": "/images/kelly_kapoor_hd.webp",
+      "foto": "/images/kelly_kapoor_hd.PNG",
       "primera_aparicion": "Temporada 1, Episodio 2",
       "version": "US",
       "frases": [
@@ -219,7 +219,7 @@
       "nombre_personaje": "Oscar Martinez",
       "nombre_actor": "Oscar",
       "apellido_actor": "Nunez",
-      "foto": "/images/oscar_martinez_hd.jpg",
+      "foto": "/images/oscar_martinez_hd.JPG",
       "primera_aparicion": "Temporada 1, Episodio 1",
       "version": "US",
       "frases": [

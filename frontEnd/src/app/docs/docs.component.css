@@ -42,13 +42,15 @@ body {
 .sidebar {
   padding-left: 10%;
   position: sticky;
-  top: 0;
+  top: 5rem;
   height: 100vh;
 }
 
 .menu-seccion {
   margin-bottom: 2rem;
+
 }
+
 
 .menu-seccion p {
   font-weight: bold;
@@ -93,15 +95,15 @@ section > p{
     padding: 1rem;
     text-align: center;
   }
-
+  
   .contenido-principal p,
   .contenido-principal ul,
   .contenido-principal li {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
-  .titulo-seccion {
-    font-size: 1.25rem;
+  h3, h2{
+    font-size: 1.20rem;
   }
 
   li {
