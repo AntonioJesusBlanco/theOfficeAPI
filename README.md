@@ -1,6 +1,7 @@
 # API y Frontend de Personajes de The Office
 
 Este proyecto es una demostración práctica de una aplicación completa con frontend en Angular y backend en Node.js + Express. La API proporciona información sobre los personajes de la serie **The Office**.
+
 https://theofficeapi-production.up.railway.app/sobre-mi
 ---
 
