@@ -1,39 +1,49 @@
 /* =======================
-   Estilos generales
+   Estilos Generales
 ========================== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #222;
   background-color: #f9f9f9;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 .contenido-principal {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-  background-color: #ffffff;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 .titulo-seccion {
   font-weight: 900;
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   margin-bottom: 1rem;
+  color: #222;
 }
 
-.subrayado{
+.subrayado {
   text-decoration: underline;
 }
+
 /* =======================
-   Secciones API 
+   Secciones API
 ========================== */
-
-
 .seccion img {
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   max-width: 100%;
+  display: block;
+  margin: 1rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* =======================
@@ -43,49 +53,64 @@ body {
   padding-left: 10%;
   position: sticky;
   top: 5rem;
-  height: 100vh;
+  height: calc(100vh - 5rem);
 }
 
 .menu-seccion {
   margin-bottom: 2rem;
-
 }
-
 
 .menu-seccion p {
   font-weight: bold;
-  color: rgb(53, 53, 53);
+  color: #353535;
+  margin-bottom: 0.5rem;
 }
 
 .menu-seccion a {
   display: block;
   margin: 0.4rem 0;
-  color: black;
+  color: #000;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .menu-seccion a:hover {
   color: #753ece;
   transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
 }
 
-section h2{
-    font-weight: 900;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-section h3{
-    font-weight: 700;
-    margin-top: 1.2rem;
-    margin-bottom: 0.4rem;
-}
-section > p{
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+section h2 {
+  font-weight: 900;
+  margin: 1.5rem 0 0.5rem;
+  color: #222;
 }
 
+section h3 {
+  font-weight: 700;
+  margin: 1.2rem 0 0.4rem;
+  color: #444;
+}
+
+section > p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* =======================
+   Listas Personalizadas
+========================== */
+ul {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+ul li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: #753ece;
+  font-weight: bold;
+}
 
 /* =======================
    Responsive (Mobile)
@@ -95,19 +120,23 @@ section > p{
     padding: 1rem;
     text-align: center;
   }
-  
+
   .contenido-principal p,
   .contenido-principal ul,
   .contenido-principal li {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
-  h3, h2{
-    font-size: 1.20rem;
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
   }
 
   li {
-    list-style-type: none;
+    list-style: none;
   }
 
   .sidebar {
@@ -119,29 +148,32 @@ section > p{
    Mobile Menu
 ========================== */
 .mobile-menu-button {
-  position: static;
-  top: 10px;
-  left: 10px;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
   z-index: 1001;
 }
 
 .mobile-menu-button button {
-  background-color: rgb(205, 201, 255);
-  color: white;
-  padding: 0.5rem 1rem;
+  background-color: #cdc9ff;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
   border: none;
   font-size: 1.1rem;
-  border-radius: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.mobile-menu-button button:hover, .mobile-menu-button button:focus{
-  background-color: rgb(182, 177, 255);
+
+.mobile-menu-button button:hover,
+.mobile-menu-button button:focus {
+  background-color: #b6b1ff;
+  transform: scale(1.05);
 }
+
 .mobile-menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   display: flex;
@@ -150,20 +182,23 @@ section > p{
 }
 
 .mobile-menu {
-  background: white;
+  background: #fff;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 80%;
-  max-width: 300px;
+  max-width: 320px;
   text-align: center;
   position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
 .mobile-menu a {
   display: block;
-  color: black;
+  color: #000;
   margin: 0.7rem 0;
   text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .mobile-menu a:hover {
@@ -179,18 +214,9 @@ section > p{
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-/* =======================
-   Listas sin viñetas
-========================== */
-ul {
-  padding-left: 1.2rem;
-  list-style-type: none;
-}
-
-ul li::before {
-  content: "•";
-  margin-right: 0.5rem;
-  color: #444;
+.cerrar:hover {
+  color: #753ece;
 }

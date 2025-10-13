@@ -1,52 +1,118 @@
+/* ========= NAVBAR PERSONALIZADA ========= */
 .custom-navbar {
-  background-color:  rgb(220, 217, 252);
-  padding-left: 2rem;   /* separación a los lados */
-  padding-right: 2rem;
-  box-shadow: 0 2px 6px rgba(204, 117, 255, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 0.8rem 2rem;
+  border-bottom: 1px solid rgba(158, 117, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(158, 117, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Efecto al hacer scroll: navbar más opaca */
+.custom-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 16px rgba(158, 117, 255, 0.25);
+}
+
+/* ========= LOGO / BRAND ========= */
 .custom-navbar-brand {
   cursor: pointer;
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-weight: 800;
+  font-size: 1.4rem;
   color: #3a0ca3;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.3px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .custom-navbar-brand:hover {
   color: #6a0dad;
+  transform: translateY(-1px);
   text-decoration: none;
+}
+
+/* ========= LOGO ========= */
+.logo-margin {
+  margin-right: 1rem;
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.custom-navbar-brand:hover .logo-margin {
+  transform: scale(1.05);
+}
+
+/* ========= NAV LINKS ========= */
+.custom-navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto; /* empuja los links a la derecha */
+  list-style: none;
 }
 
 .custom-navbar-nav .nav-link {
   font-weight: 600;
   color: #3a0ca3;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+}
+
+/* Línea animada debajo del link */
+.custom-navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #6a0dad;
+  transition: width 0.3s ease;
+}
+
+.custom-navbar-nav .nav-link:hover::after,
+.custom-navbar-nav .nav-link.active::after {
+  width: 100%;
 }
 
 .custom-navbar-nav .nav-link:hover,
 .custom-navbar-nav .nav-link.active {
   color: #6a0dad;
-  text-decoration: underline;
+  transform: translateY(-1px);
 }
 
-/* Margen extra a la derecha de la imagen para que se "desplace" un poco */
-.logo-margin {
-  margin-right: 2rem; /* ajusta a tu gusto */
-}
-
-/* Para que los enlaces estén bastante a la derecha en pantallas grandes */
+/* ========= RESPONSIVIDAD ========= */
 @media (min-width: 992px) {
   .custom-navbar-nav {
-    margin-left: 10rem; /* empuja los links hacia la derecha */
+    margin-left: 8rem; /* ajusta según tu diseño */
   }
 }
+
 @media (max-width: 991px) {
-  .menu{
+  .menu {
     margin-top: 20px;
-}
-}
-/* Para que el ul tenga columna en móvil y fila en grande */
-.custom-navbar-nav {
-  gap: 1rem; /* espacio entre links */
+  }
+
+  .custom-navbar {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .custom-navbar-nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+
+  .custom-navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
 }

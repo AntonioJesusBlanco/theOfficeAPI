@@ -1,12 +1,12 @@
 {
-  "name": "backend",
+  "name": "theofficeapi",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Antonio Jesus Blanco ",
   "license": "ISC",
   "description": "",
   "dependencies": {
