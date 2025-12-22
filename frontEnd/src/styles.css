@@ -41,9 +41,9 @@ body {
 /* De morado oscuro a transparente */
   linear-gradient(
         90deg,
-    rgba(255, 0, 179, 0.082) ,
-    rgba(234, 0, 255, 0.11),
-    rgba(140, 0, 255, 0.137)
+    rgba(47, 0, 255, 0.13) ,
+    rgba(255, 0, 255, 0.1),
+    rgba(76, 0, 255, 0.123)
   ),
    /* Círculos pequeños repetidos */
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><circle cx="1" cy="1" r="1" fill="rgba(180, 70, 200, 0.23)"/></svg>');
@@ -497,6 +497,7 @@ small{
     text-align: center;
   }
 
+
   .contenido-principal p,
   .contenido-principal ul,
   .contenido-principal li {
@@ -539,7 +540,7 @@ small{
   }
 
   .logo-the-office {
-    height: 150px;
+    height: 400px;
   }
 
   .imagen-personaje {
@@ -550,7 +551,7 @@ small{
 @media (max-width: 891px) {
   .tarjeta-personaje {
     margin: 10px 0;
-  }
+  }  
 
   p,
   li {
@@ -567,6 +568,9 @@ small{
 
   .imagen-personaje {
     height: 380px;
+  }
+  .presentacion  {
+    margin-bottom: 18rem;
   }
 }
 
