@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';  // Importante para <router-outl
 import { PersonajesService, Personaje } from './services/usuario.service';
 import { HttpClientModule } from '@angular/common/http';   // <-- Importa HttpClientModule aquí
 import { FiltroVersionPipe } from './filtro-version.pipe';  // Asegúrate de que la ruta sea correcta
+import { NavbarComponent } from './navbar.component'; // Ajusta la ruta
+
 @Component({
   standalone: true,
   selector: 'app-root',
@@ -11,9 +13,9 @@ import { FiltroVersionPipe } from './filtro-version.pipe';  // Asegúrate de que
     CommonModule,
     RouterModule ,
     HttpClientModule,    // necesario para router-outlet
+        NavbarComponent,
     FiltroVersionPipe
   ],
-  styleUrls: ['./app.component.css'],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
