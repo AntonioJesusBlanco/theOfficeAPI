@@ -1,48 +1,46 @@
-<div class="container-fluid mt-3 px-0 min-vh">
+<div class="container-fluid mt-2 px-0 min-vh">
   <!-- Presentación -->
-  <div class="d-flex align-items-center mt-5 p-5 rounded-3 container-fluid justify-content-center presentacion">
-    <!-- Imagen a la izquierda -->
-    <img
-      src="assets/the_office.png"
-      alt="The Office"
-      class="logo-the-office"
-    />
-
-    <!-- Texto a la derecha -->
-    <div>
-      <h1 class="mb-0 display-2 titulo-the-office">
-        The Office
-      </h1>
-      <small class="mb-0 display-6 subtitulo-the-office">
-        API
-      </small>
+  <div class="d-flex align-items-center mt-5 p-5 rounded-3 justify-content-center presentacion flex-wrap">
+    <img src="assets/the_office.png" alt="The Office" class="logo-the-office mb-3 mb-md-0" />
+    <div class="ms-md-4 text-center text-md-start">
+      <small class="display-6 subtitulo-the-office">API</small>
     </div>
   </div>
-  <div class="rounded shadow-sm contenedor-personajes" style="background-color: rgba(166, 128, 255, 0.05);" >
-    <div class="row p-5 fila"> 
-      <div class="col-xl-4 pb-5" *ngFor="let p of personajes">
-        <div class="card h-100 tarjeta-personaje">
-          <img
-            [src]="p.foto"
-            class="card-img-top imagen-personaje"
-            alt="{{ p.nombre_personaje }}"
-          />
-          <div class="card-body">
-            <h5 class="card-title">
-              {{ p.nombre_personaje }} ({{ p.version }})
-            </h5>
-            <p class="card-text d-inline text-actor" >
-              <strong >Actor/Actriz:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}</p>
-              <p class="text-aparicion"><strong >Primera aparición:</strong> {{ p.primera_aparicion }}
-            </p>
-            <h6>Frases:</h6>
-            <ul class="list-unstyled">
-              <li *ngFor="let frase of p.frases">
+
+  <!-- Contenedor de personajes -->
+  <div class="rounded shadow-sm contenedor-personajes mt-5 px-3 py-5" style="background-color: rgba(166, 128, 255, 0.05);">
+    <div class="row g-4">
+      <div class="col-12" *ngFor="let p of personajes; let i = index">
+     <div class="card tarjeta-personaje d-flex flex-column flex-md-row align-items-center p-3"
+     [ngClass]="{
+       'flex-md-row-reverse bg-right-to-left': i % 2 !== 0,
+       'bg-left-to-right': i % 2 === 0
+     }">
+
+          <!-- Imagen -->
+          <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
+            <img [src]="p.foto" class="imagen-personaje rounded w-100" alt="{{ p.nombre_personaje }}" />
+          </div>
+
+          <!-- Texto -->
+          <div class="col-12 col-md-8 px-md-4 gap-4 d-flex flex-column">
+
+            <h5 class="card-title mb-0">{{ p.nombre_personaje }} ({{ p.version }})</h5>
+           
+            <p class="text-actor mb-0"><strong>Actor/Actriz:</strong> {{ p.nombre_actor }} {{ p.apellido_actor }}</p>
+   
+             <div><p class="text-aparicion mb-4"><strong>Primera aparición:</strong> {{ p.primera_aparicion }}</p>
+           
+            <ul class="list-unstyled mb-0">
+              <h6 class="mb-2">Frases:</h6>
+
+              <li *ngFor="let frase of p.frases" class="mb-2">
                 <em>"{{ frase.texto }}"</em><br />
-                <small class="text-muted">{{ frase.capitulos.join(', ') }}</small>
+                <small >{{ frase.capitulos.join(', ') }}</small>
               </li>
             </ul>
           </div>
+ </div>
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@
 
   <!-- Introducción -->
   <section class="mb-5 seccion " style="white-space: pre-wrap;" id="introduccion-documentacion">
-    <h2>Documentación de la API: The Office</h2>
+    <h2 class="titulo-seccion">Documentación de la API: The Office</h2>
     <p>
       Esta <span class="subrayado">API</span> proporciona información sobre los personajes de la serie <span class="subrayado"><strong>The Office</strong></span> tanto de la version americana como de la inglesa.
       A continuación, se describen las distintas peticiones que puedes realizar al servidor, los campos que contiene la respuesta y ejemplos prácticos sobre los mismos.
@@ -51,7 +51,7 @@
     </section>
 <hr>
     <section class="mb-4 seccion" style="white-space: pre-wrap;" id="obtener-personajes-documentacion">
-    <h3 class="mb-2" id>Obtener todos los personajes</h3>
+    <h3 class="titulo-seccion" id>Obtener todos los personajes</h3>
     <p class="mb-1"><strong >Método:</strong> GET </p>
     <p class="mb-1"><strong>URL:</strong> /api/personajes  </p>
     <p class="mb-1"><strong>Descripción:</strong> Devuelve una lista con <span class="subrayado">todos</span> los personajes.</p>
@@ -70,14 +70,52 @@
 
 
   </section>
-
   <section class="mb-5 seccion">
-    <img src="assets/GetTodos.PNG" alt="Ejemplo de respuesta GET todos los personajes" >
+    
+<pre class="code-block"><code>[
+  &#123;
+    "nombre_personaje": "Michael Scott",
+    "nombre_actor": "Steve",
+    "apellido_actor": "Carell",
+    "foto": "/images/michael_scott_hd.webp",
+    "primera_aparicion": "Temporada 1, Episodio 1",
+    "version": "US",
+    "frases": [
+      &#123;
+        "texto": "That's what she said.",
+        "capitulos": ["Temporada 2, Episodio 2", "Temporada 3, Episodio 5..."]
+      &#125;,
+      &#123;
+        "texto": "I am Beyoncé, always.",
+        "capitulos": ["Temporada 5, Episodio 23"]
+      &#125;
+    ]
+  &#125;,
+  &#123;
+    "nombre_personaje": "Jim Halpert",
+    "nombre_actor": "John",
+    "apellido_actor": "Krasinski",
+    "foto": "/images/jim_halpert_hd.jpg",
+    "primera_aparicion": "Temporada 1, Episodio 1",
+    "version": "US",
+    "frases": [
+      &#123;
+        "texto": "Bears. Beets. Battlestar Galactica.",
+        "capitulos": ["Temporada 3, Episodio 3"]
+      &#125;,
+      &#123;
+        "texto": "Right now this is just a job. If I advance any higher in this company, then...",
+        "capitulos": ["Temporada 1, Episodio 3"]
+      &#125;
+    ]
+  &#125;
+] 
+</code></pre>
   </section>
 <hr>
   <!-- Obtener por nombre -->
   <section class="mb-4 seccion" style="white-space: pre-wrap;" id="obtener-personaje-nombre-documentacion">
-    <h3 class="mb-2">Obtener un personaje por nombre</h3>
+    <h3 class="titulo-seccion">Obtener un personaje por nombre</h3>
     
     <p class="mb-1"><strong>Método:</strong> GET  </p>
     <p class="mb-1"><strong>URL:</strong> /api/personajes/:name</p>
@@ -86,12 +124,32 @@
   </section>
 
   <section class="mb-5 seccion">
-    <img src="assets/getNombre.PNG" alt="Ejemplo de respuesta GET por nombre" >
+    
+<pre class="code-block"><code>&#123;
+  "nombre_personaje": "Michael Scott",
+  "nombre_actor": "Steve",
+  "apellido_actor": "Carell",
+  "foto": "/images/michael_scott_hd.webp",
+  "primera_aparicion": "Temporada 1, Episodio 1",
+  "version": "US",
+  "frases": [
+    &#123;
+      "texto": "That's what she said.",
+      "capitulos": ["Temporada 2, Episodio 2", "Temporada 3, Episodio 5..."]
+    &#125;,
+    &#123;
+      "texto": "I am Beyoncé, always.",
+      "capitulos": ["Temporada 5, Episodio 23"]
+    &#125;
+  ]
+&#125;
+</code></pre>
+    <!-- <img src="assets/getNombre.PNG" alt="Ejemplo de respuesta GET por nombre" >  -->
   </section>
 <hr>
   <!-- POST: Añadir personaje -->
   <section class="mb-4 seccion" style="white-space: pre-wrap;" id="anadir-personaje-documentacion">
-    <h3 class="mb-2">Añadir un nuevo personaje</h3>
+    <h3 class="titulo-seccion">Añadir un nuevo personaje</h3>
     <p class="mb-1"><strong>Método:</strong> POST  </p>
     <p class="mb-1"><strong>URL:</strong> /api/personajes</p>
     <p class="mb-1"><strong>Descripción:</strong>  Añade un nuevo personaje a la base de datos.</p>
@@ -100,50 +158,104 @@
      
   <section class="mb-4 seccion">
     <p class="mb-1"><strong>Cuerpo JSON esperado</strong></p>
-    <img src="assets/peticionEsperada.PNG" alt="Petición JSON esperada para POST" >
+    <pre class="code-block"><code>&#123;
+  "nombre_personaje": "Dwight Schrute",
+  "nombre_actor": "Rainn",
+  "apellido_actor": "Wilson",
+  "foto": "/images/dwight_schrute_hd.webp",
+  "primera_aparicion": "Temporada 1, Episodio 1",
+  "version": "US",
+  "frases": [
+    &#123;
+      "texto": "Whenever I'm about to do something, I think, 'Would an idiot do that?' And if they would, I do not do that thing.",
+      "capitulos": ["Temporada 1, Episodio 3"]
+    &#125;,
+    &#123;
+      "texto": "Bears. Beets. Battlestar Galactica.",
+      "capitulos": ["Temporada 3, Episodio 3"]
+    &#125;
+  ]
+&#125;
+</code></pre>
+
+    <!-- <img src="assets/peticionEsperada.PNG" alt="Petición JSON esperada para POST" > -->
   </section>
 
   <section class="mb-4 seccion" style="white-space: pre-wrap;">
-    <p><strong>Respuesta exitosa</strong></p>
+    <p class="mb-1"><strong>Respuesta exitosa</strong></p>
+    <pre class="code-block"><code>&#123;
+"message": "Personaje añadido con exito (simulado)"
+&#125;
+</code></pre>
 
-
-    <img src="assets/respuestaExitosaAnadir.PNG" alt="Respuesta exitosa de POST o PUT" >
   </section>
-
-    <section class="mb-5 seccion" style="white-space: pre-wrap;">
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
     <p><strong>En caso de error:</strong> La respuesta seran</p>
- 
-    <img src="assets/respuestaErrorFaltaCampos.PNG" alt="Respuesta de error" >
-    <br>  
-    <img src="assets/respuestaErrorPersonajeExistente.PNG" alt="Respuesta de error" >
+    <pre class="code-block"><code>&#123;
+"message": "Falta campos requeridos: nombre_personaje, nombre_actor"
+&#125;
+</code></pre>
 
   </section>
+  <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <pre class="code-block"><code>&#123;
+"message": "Personaje ya existente"
+&#125;
+</code></pre>
+
+  </section>
+
+
 <hr>
   <!-- PUT: Actualizar personaje -->
   <section class="mb-4 seccion" style="white-space: pre-wrap;" id="actualizar-personaje-documentacion">
-    <h3>Actualizar un personaje existente</h3>
+    <h3 class="titulo-seccion">Actualizar un personaje existente</h3>
     <p class="mb-1"><strong>Método:</strong> PUT  </p>
     <p class="mb-1"><strong>URL:</strong> /api/personajes/:name</p>
     <p class="mb-1"><strong>Descripción:</strong>  Actualiza la información de un personaje específico (por su nombre).</p>
       </section>
-  <section class="mb-4 seccion">
 
+<section class="mb-4 seccion">
     <p><strong>Cuerpo JSON esperado</strong> Igual que en POST.</p>
-    <img src="assets/peticionEsperada.PNG" alt="Petición PUT esperada" >
-  </section>
+    <pre class="code-block"><code>&#123;
+  "nombre_personaje": "Dwight Schrute",
+  "nombre_actor": "Rainn",
+  "apellido_actor": "Wilson",
+  "foto": "/images/dwight_schrute_hd.webp",
+  "primera_aparicion": "Temporada 1, Episodio 1",
+  "version": "US",
+  "frases": [
+    &#123;
+      "texto": "Whenever I'm about to do something, I think, 'Would an idiot do that?' And if they would, I do not do that thing.",
+      "capitulos": ["Temporada 1, Episodio 3"]
+    &#125;,
+    &#123;
+      "texto": "Bears. Beets. Battlestar Galactica.",
+      "capitulos": ["Temporada 3, Episodio 3"]
+    &#125;
+  ]
+&#125;
+</code></pre>
 
-  <section class="mb-4 seccion" style="white-space: pre-wrap;">
-    <p><strong>Respuesta exitosa:</strong></p>
-  
-    <img src="assets/respuestaExitosaActualizar.PNG" alt="Respuesta exitosa de PUT" >
-  </section>
+    <!-- <img src="assets/peticionEsperada.PNG" alt="Petición JSON esperada para POST" > -->
+  </section>  
 
+ <section class="mb-4 seccion" style="white-space: pre-wrap;">
+    <p class="mb-1"><strong>Respuesta exitosa</strong></p>
+    <pre class="code-block"><code>&#123;
+"message": "Personaje Michael Scott actualizado correctamente (simulado)"
+&#125;
+</code></pre>
+  </section>
   <section class="mb-4 seccion" style="white-space: pre-wrap;">
     <p><strong>En caso de error:</strong> La respuesta sera:</p>
-  
-    <img src="assets/respuestaErrorFaltaCampos.PNG" alt="Respuesta de error" >
+    <pre class="code-block"><code>&#123;
+"message": "Falta campos requeridos: nombre_personaje, nombre_actor"
+&#125;
+</code></pre>
 
   </section>
+
 
 </div>
 

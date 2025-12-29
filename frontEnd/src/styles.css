@@ -1,4 +1,628 @@
-/* You can add global styles to this file, and also import other style files */
+/* =======================
+   VARIABLES GLOBALES
+========================== */
+:root {
+  --color-acento: #8b5cf6;
+  --color-acento-hover: #a78bfa;
+  --color-acento-suave: rgba(139, 92, 246, 0.15);
+  --color-fondo-principal: #0a0a0f;
+  --color-fondo-secundario: #12121a;
+  /* --color-fondo-card: #cc00ff00; */
+  --color-fondo-card-hover: #232333;
+  --color-texto-primario: #e5e7eb;
+  --color-texto-secundario: #9ca3af;
+  --color-texto-terciario: #6b7280;
+  --color-borde: rgba(139, 92, 246, 0.2);
+  --color-borde-suave: rgba(255, 255, 255, 0.08);
+  --color-sombra: rgba(0, 0, 0, 0.5);
+  --fuente-principal: "Arial", "Segoe UI", sans-serif;
+  --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-*{
- font-family: 'Inter', sans-serif;}
+/* =======================
+   RESETEO Y BASE
+========================== */
+* {
+  box-sizing: border-box;
+}
+/* =======================
+   BODY Y FONDO MEJORADO
+========================== */
+body { 
+  font-family: var(--fuente-principal);
+  color: var(--color-texto-primario);
+  /* Morado casi negro de base */
+  background-color: #000000;
+
+  /* Fondo múltiple: círculos grandes muy sutiles + puntos pequeños */
+  background-image:
+
+  /* Círculos grandes MUY difuminados */
+  /* De morado oscuro a transparente */
+  linear-gradient(
+        90deg,
+    rgba(47, 0, 255, 0.13) ,
+    rgba(255, 0, 255, 0.1),
+    rgba(76, 0, 255, 0.123)
+  ),
+   /* Círculos pequeños repetidos */
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><circle cx="1" cy="1" r="1" fill="rgba(180, 70, 200, 0.23)"/></svg>');
+
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;
+  background-position: center, center;
+
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* =======================
+   PRESENTACIÓN Y CARDS
+========================== */
+
+
+.tarjeta-personaje {
+  /* background: linear-gradient(90deg, rgba(124, 0, 95, 0) 0%, rgba(0, 0, 0, 0) 100%); */
+  background: transparent;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  transition: var(--transicion);
+  transform: translateY(0);
+  cursor: pointer;
+  margin: 30px;
+}
+
+/* Cuando la imagen está a la derecha */
+.flex-md-row-reverse.tarjeta-personaje {
+  background: linear-gradient(270deg, rgba(124, 0, 95, 0) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.tarjeta-personaje div ul li::before {
+  content: "▸";
+  margin-right: 0.7rem;
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.tarjeta-personaje:hover {
+  /* transform: translateY(-8px) scale(1.03); */
+  box-shadow: 0 0px 34px rgba(139, 92, 246, 0.25);
+}
+.contenedor-personajes{
+    background-color: transparent !important;
+}
+
+
+/* =======================
+   CONTENIDO PRINCIPAL
+========================== */
+.contenido-principal {
+  padding: 2rem;
+  padding-bottom: 1rem;
+  background-color: var(--color-fondo-card);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: 16px;
+  transition: var(--transicion);
+  box-shadow: 0 4px 20px var(--color-sombra);
+}
+
+.contenido-principal:hover {
+  border-color: var(--color-borde);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+}
+
+.titulo-seccion {
+  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-texto-primario);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--color-borde);
+
+}
+.code-block {
+  background: #161616ad;          /* azul oscuro elegante */
+  color: #e5e7eb;               /* gris claro */
+  padding: 1.25rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.code-block:hover {
+  box-shadow: 0 14px 40px rgba(139, 92, 246, 0.1);
+}
+
+.code-block code {
+  background: none;
+  padding: 0;
+  white-space: pre;
+  display: block;
+}
+
+/* Scrollbar bonito (Chrome, Edge) */
+.code-block::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+.subrayado {
+  text-decoration: underline;
+  text-decoration-color: var(--color-acento);
+  text-underline-offset: 4px;
+}
+
+/* =======================
+   SECCIONES API
+========================== */
+.seccion img {
+  border-radius: 12px;
+  border: 1px solid var(--color-borde-suave);
+  box-shadow: 0 8px 24px var(--color-sombra);
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0;
+  transition: var(--transicion);
+  background-color: var(--color-fondo-secundario);
+}
+
+.seccion img:hover {
+  transform: scale(1.02);
+  border-color: var(--color-borde);
+  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.2);
+}
+
+/* =======================
+   SIDEBAR
+========================== */
+.sidebar {
+  padding-left: 10%;
+  position: sticky;
+  top: 5rem;
+  height: calc(100vh - 5rem);
+  background-color: transparent;
+}
+
+.menu-seccion {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--color-fondo-card);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: 12px;
+  transition: var(--transicion);
+}
+
+.menu-seccion:hover {
+  border-color: var(--color-borde);
+  background-color: var(--color-fondo-card-hover);
+}
+
+.menu-seccion p {
+  font-weight: bold;
+  color: var(--color-acento-hover);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-seccion a {
+  display: block;
+  margin: 0.5rem 0;
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: var(--transicion);
+  border-left: 2px solid transparent;
+}
+
+.menu-seccion a:hover {
+  color: var(--color-acento-hover);
+  background-color: var(--color-acento-suave);
+  border-left-color: var(--color-acento);
+  transform: translateX(4px);
+}
+
+/* =======================
+   SECCIONES Y TIPOGRAFÍA
+========================== */
+section h2 {
+  font-weight: 900;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--color-texto-primario);
+  font-size: 1.75rem;
+  padding-bottom: 0.5rem;
+}
+
+section h3 {
+  font-weight: 700;
+  margin: 1.2rem 0 0.4rem;
+  color: var(--color-texto-secundario);
+  font-size: 1.3rem;
+}
+
+section > p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-texto-secundario);
+  line-height: 1.7;
+}
+
+/* =======================
+   LISTAS PERSONALIZADAS
+========================== */
+.tarjeta-personaje div ul {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.tarjeta-personaje div ul li {
+  margin: 0.6rem 0;
+  color: var(--color-texto-secundario);
+  transition: var(--transicion);
+  padding-left: 0.5rem;
+}
+
+.tarjeta-personaje div ul li:hover {
+  color: var(--color-acento-hover);
+}
+
+
+
+/* =======================
+   MOBILE MENU
+========================== */
+.mobile-menu-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+}
+
+.mobile-menu-button button {
+  background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-acento-hover) 100%);
+  color: var(--color-texto-primario);
+  padding: 0.7rem 1.3rem;
+  border: 1px solid var(--color-borde);
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 4px 12px var(--color-sombra);
+  font-weight: 600;
+}
+
+.mobile-menu-button button:hover,
+.mobile-menu-button button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu {
+  background: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  width: 85%;
+  max-width: 340px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px var(--color-sombra);
+  transition: var(--transicion);
+}
+
+.mobile-menu a {
+  display: block;
+  color: var(--color-texto-secundario);
+  margin: 0.8rem 0;
+  padding: 0.6rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: var(--transicion);
+  border: 1px solid transparent;
+}
+
+.mobile-menu a:hover {
+  color: var(--color-acento-hover);
+  background-color: var(--color-acento-suave);
+  border-color: var(--color-borde);
+  font-weight: 600;
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--color-texto-terciario);
+  transition: var(--transicion);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.cerrar:hover {
+  color: var(--color-acento-hover);
+  background-color: var(--color-acento-suave);
+  transform: rotate(90deg);
+}
+
+/* =======================
+   SECCIÓN DE PRESENTACIÓN
+========================== */
+.min-vh {
+  min-height: 100vh;
+}
+
+.presentacion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+
+/* =======================
+   LOGO Y TÍTULOS
+========================== */
+.logo-the-office {
+  height: 430px;
+  width: auto;
+  margin-bottom: 1rem;
+  transition: var(--transicion);
+  filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.3));
+  filter: invert(1);
+}
+
+.logo-the-office:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 8px 24px rgba(139, 92, 246, 0.5));
+    filter: invert(1);
+
+}
+/* 
+.titulo-the-office {
+  font-weight: 900;
+  font-size: 4.8rem;
+  letter-spacing: -0.5px;
+  color: var(--color-texto-primario);
+  margin-bottom: 0.3rem;
+  text-shadow: 0 2px 8px var(--color-sombra);
+} */
+
+.subtitulo-the-office {
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 2.5rem;
+}
+
+/* =======================
+   IMAGEN DE PERSONAJE
+========================== */
+.tarjeta-personaje > img {
+  padding: 2px;
+}
+
+.imagen-personaje {
+  width: 100%;
+  height: 500px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background-color: var(--color-fondo-secundario);
+  border-radius: 16px;
+  transition: var(--transicion);
+  box-shadow: 0 4px 12px var(--color-sombra);
+}
+
+/* =======================
+   CUERPO DE TARJETA
+========================== */
+.card-body {
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-borde-suave);
+  transition: var(--transicion);
+}
+
+.card-body h5 {
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: var(--color-texto-primario);
+  font-size: 1.2rem;
+  transition: var(--transicion);
+}
+
+.card-body h5:hover {
+  color: var(--color-acento-hover);
+}
+
+/* =======================
+   TEXTOS INTERACTIVOS
+========================== */
+.text-version {
+  color: var(--color-texto-terciario);
+  transition: var(--transicion);
+  font-size: 0.9rem;
+  
+}
+.card-title{
+    
+    transition: var(--transicion);
+    font-weight: bolder;
+    color: var(--color-texto-primario);
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--color-borde);
+}
+.text-actor {
+
+  color: var(--color-texto-primario);
+  transition: var(--transicion);
+
+}
+
+h6{
+    transition: var(--transicion);
+    color: var(--color-texto-primario);
+}
+small{
+    transition: var(--transicion);
+    color: var(--color-texto-terciario);
+}
+.text-aparicion {
+  color: var(--color-texto-primario);
+  transition: var(--transicion);
+
+}
+
+.card-title:hover,
+.text-actor:hover,
+.text-aparicion:hover,
+.text-version:hover {
+  color: var(--color-acento-hover);
+}
+
+/* =======================
+   RESPONSIVE (Mobile)
+========================== */
+@media (max-width: 768px) {
+  .contenido-principal {
+    padding: 1rem;
+    text-align: center;
+  }
+
+
+  .contenido-principal p,
+  .contenido-principal ul,
+  .contenido-principal li {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .titulo-the-office {
+    font-size: 2rem;
+  }
+
+  .subtitulo-the-office {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 892px) and (max-width: 1200px) {
+  .tarjeta-personaje {
+    margin: 20px 0;
+  }
+
+  p,
+  li {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .logo-the-office {
+    height: 400px;
+  }
+
+  .imagen-personaje {
+    height: 480px;
+  }
+}
+
+@media (max-width: 891px) {
+  .tarjeta-personaje {
+    margin: 10px 0;
+  }  
+
+  p,
+  li {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .logo-the-office {
+    height: 120px;
+  }
+
+  .imagen-personaje {
+    height: 380px;
+  }
+  .presentacion  {
+    margin-bottom: 18rem;
+  }
+}
+
+/* =======================
+   EFECTOS ADICIONALES
+========================== */
+.contenido-principal::before,
+.presentacion::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--color-acento) 0%, transparent 50%, var(--color-acento) 100%);
+  border-radius: inherit;
+  opacity: 0;
+  z-index: -1;
+  transition: var(--transicion);
+}
