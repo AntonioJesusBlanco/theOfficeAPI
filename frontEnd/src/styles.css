@@ -37,8 +37,8 @@ body {
   /* Fondo múltiple: círculos grandes muy sutiles + puntos pequeños */
   background-image:
 
-    /* Círculos grandes MUY difuminados */
-/* De morado oscuro a transparente */
+  /* Círculos grandes MUY difuminados */
+  /* De morado oscuro a transparente */
   linear-gradient(
         90deg,
     rgba(47, 0, 255, 0.13) ,
@@ -123,10 +123,46 @@ body {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--color-texto-primario);
-  background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-acento-hover) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--color-borde);
+
+}
+.code-block {
+  background: #161616ad;          /* azul oscuro elegante */
+  color: #e5e7eb;               /* gris claro */
+  padding: 1.25rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.code-block:hover {
+  box-shadow: 0 14px 40px rgba(139, 92, 246, 0.1);
+}
+
+.code-block code {
+  background: none;
+  padding: 0;
+  white-space: pre;
+  display: block;
+}
+
+/* Scrollbar bonito (Chrome, Edge) */
+.code-block::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
 }
 
 .subrayado {
@@ -215,7 +251,6 @@ section h2 {
   margin: 1.5rem 0 0.5rem;
   color: var(--color-texto-primario);
   font-size: 1.75rem;
-  border-bottom: 2px solid var(--color-borde);
   padding-bottom: 0.5rem;
 }
 
